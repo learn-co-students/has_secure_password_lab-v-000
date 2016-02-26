@@ -1,0 +1,7 @@
+<h2>Signup</h2>
+
+<%= form_tag ({controller: 'users', action: 'create', method: 'post'}) do %>
+  Username: <%= text_field_tag :name %><br>
+  Password: <%= password_field_tag :password %><br>
+  <%= submit_tag "Sign up" %>
+<% end %>
