@@ -1,0 +1,12 @@
+<%= flash[:alert] %>
+
+<h2>Log In</h2>
+<%= form_for :user do |f| %>
+  <p><%= f.label :name %>
+  <%= f.text_field :name %></p>
+  <p><%= f.label :password %>
+  <%= f.password_field :password %></p>
+  <%= f.submit "Log In" %>
+<% end %>
+
+<p>New User? <%= link_to "Create Account", signup_path %></p>
