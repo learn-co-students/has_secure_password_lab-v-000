@@ -1,0 +1,10 @@
+User 
+  fields
+    name
+    password_digest
+
+  Methods
+   has_secure_password
+
+
+--no-test-framework
