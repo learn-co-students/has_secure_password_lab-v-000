@@ -1,0 +1,13 @@
+<h1>Log In</h1>
+
+<%=form_tag controller:'sessions', action:'create' do |f|%>
+
+<%=f.label :name%>
+<%=f.text_field :name%><br>
+
+<%=f.label :password%>
+<%=f.text_field :password%><br>
+
+<%=f.submit "log in"%>
+
+<%end%>
