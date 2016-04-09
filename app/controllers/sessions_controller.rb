@@ -6,9 +6,13 @@ class SessionsController < ApplicationController
 
   def create
     @user=User.find_by(name: user_params[:name])
-    return head[:forbidden] unless user_params[:password] == @user.password
-    login(@user.id)
-    redirect_to root_path
+    if @user && @user.authenticate(user_params[:password])
+      login(@user.id)
+      redirect_to root_path
+    else
+      redirect_to login_path
+    end
+
     
   end
 
