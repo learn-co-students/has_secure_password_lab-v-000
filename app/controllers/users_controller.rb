@@ -9,14 +9,10 @@ class UsersController < ApplicationController
   end
 
   def create
-# byebug
     @user=User.new(user_params)
-    if @user.save
-      login(@user.id)
-      redirect_to root_path
-    else
-      redirect_to users_new_path
-    end
+    return redirect_to users_new_path unless @user.save
+    login(@user.id)
+    redirect_to root_path
   end
 
   private
