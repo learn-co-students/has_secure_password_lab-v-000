@@ -1,16 +1,16 @@
 class UsersController < ApplicationController
-
-  def index
-  end
-
   def new
   end
 
   def create
-    raise params.inspect
-    @user = User.create!(user_params)
-    return head(:forbidden) unless session[:password] == @user.password
-    session[:user_id] = @user.id
+    @user = User.new(user_params)
+    if !@user.save
+      redirect_to :new_user unless session[:password] == @user.password
+    else
+      @user.save
+      session[:user_id] = @user.id
+      redirect_to :users
+    end
   end
 
   private
