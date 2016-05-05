@@ -1,0 +1,5 @@
+Hi <%= @user.name %>! <br><br>
+
+<%= form_tag ({controller: 'sessions', action: 'logout', method: 'post'}) do  %>
+	<%= submit_tag "Logout" %>
+<% end %>
