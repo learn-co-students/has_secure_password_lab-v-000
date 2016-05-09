@@ -1,0 +1,12 @@
+ <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
+<h2>Sign Up</h2>
+
+  <%= form_for @user do |f| %>
+    Name: <%= f.text_field :name %><br>
+    Password: <%= f.password_field :password %><br>
+    Password Confirmation: <%= f.password_field :password_confirmation %><br></br>
+    <%= f.submit "Submit" %>
+  <% end %>
