@@ -7,6 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% @user.errors.full_messages each do | msg| %>
+<%= msg %>
+<% end %>
 
 <%= yield %>
 
