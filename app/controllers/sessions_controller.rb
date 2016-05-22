@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(name: params[:user][:name])
-    if user.try(:authenticate, params[:user][:password])
-      session[:user_id] = user.id
-      @user = user
+    @user= User.find_by(name: params[:user][:name])
+    if @user.try(:authenticate, params[:user][:password])
+      session[:user_id] = @user.id
+      
       redirect_to users_path
     else
       redirect_to login_path
@@ -20,3 +20,5 @@ class SessionsController < ApplicationController
     redirect_to new_user_path
   end
 end
+
+
