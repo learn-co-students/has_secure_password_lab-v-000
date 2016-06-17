@@ -1,0 +1,11 @@
+<h1>Sign up</h1>
+
+<%= form_tag users_create do %>
+
+  Username: <%= text_field :name %>
+  Password: <%= password_field :password %>
+  Password confirmation: <%= password_field:password_confirmation %>
+
+  <%= submit_tag "Submit" %>
+
+<% end %>  
