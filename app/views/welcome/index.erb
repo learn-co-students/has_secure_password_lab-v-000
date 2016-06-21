@@ -1,0 +1,5 @@
+<p>Hi, <%= @user.name %>.</p>
+
+<%= form_tag('/logout') do %>
+  <% submit_tag "Logout" %>
+<% end %>
