@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'bcrypt', '3.1.11'
 gem 'pry'
 gem 'pry-nav'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
