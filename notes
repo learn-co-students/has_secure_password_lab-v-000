@@ -1,0 +1,15 @@
+#pages
+
+signup page
+login page
+home page that says "Hi, #{username}."
+
+1. User model, migrations - create ( name, password, password_confirmation)
+
+2. Users controller, new leads to the signup view. create, makes the user. redirect to homepage
+
+3. sessions Controlller
+
+4. Welcome controller - route for root leads to #show for that controller. if user_id in sessino then they go to the view if not, then redirect to login. 
+
+5. Make links to navigate 
