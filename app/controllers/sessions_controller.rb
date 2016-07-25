@@ -1,7 +1,5 @@
 class SessionsController < ApplicationController
 
- 
-
   def new
     render 'users/login'
   end
@@ -12,9 +10,15 @@ class SessionsController < ApplicationController
         session[:user_id] = @user.id
         redirect_to root_path
       else
-        flash[:notice] = "Incorect Login Information"
-        redirect_to signup_path
+        flash[:notice] = "Invalid Login Information, Try Again."
+        redirect_to login_path
       end
+    end
+
+
+    def destroy
+      session[:user_id] = nil
+      redirect_to login_path
     end
 
 

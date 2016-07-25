@@ -6,14 +6,12 @@ render 'signup'
 end
 
 
-def create 
-  @user = User.new(user_params)
-    if @user.valid_user
-      @user.save
+def create
+    @user = User.create(user_params)
+    if @user
       session[:user_id] = @user.id
-      redirect_to root_path
+      redirect_to signup_path
     else
-      flash[:notice] = "Invalid Information"
       redirect_to signup_path
     end
 end

@@ -4,7 +4,7 @@ signup page
 login page
 home page that says "Hi, #{username}."
 
-1. User model, migrations - create
+1. User model, migrations - create ( name, password, password_confirmation)
 
 2. Users controller, new leads to the signup view. create, makes the user. redirect to homepage
 
