@@ -4,7 +4,7 @@
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 
-<%= form_for @user, url: signup_path do |f| %>
+<%= form_for :user, url: signup_path do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %><br><br>
 
