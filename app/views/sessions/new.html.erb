@@ -1,0 +1,17 @@
+<h1>Login</h1>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+<%= form_for :user, url: login_path do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br><br>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %><br><br>
+
+  <%= f.submit "Log In" %><br><br>
+
+  Or <%= link_to(controller: 'users', action: 'new') { 'Sign Up' } %>
+<% end %>
