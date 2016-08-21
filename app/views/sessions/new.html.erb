@@ -1,5 +1,12 @@
-<%= form_for :session, url: '/login' do |f| %>
-  Name: <%= f.text_field :name %>
-  Password: <%= f.password_field :password %>
+<h1>Log In</h1>
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+
   <%= f.submit "Log In" %>
+
 <% end %>
