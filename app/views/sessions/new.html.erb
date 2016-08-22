@@ -1,0 +1,15 @@
+<%= form_tag 'create', method: :post, class: "navbar-form navbar-left search-form" do %>
+  <%= text_field_tag(
+      :name,
+      params[:name],
+      placeholder: "name",
+      class: "form-control"
+  ) %>
+  <%= text_field_tag(
+      :password,
+      params[:password],
+      placeholder: "password",
+      class: "form-control"
+  ) %>
+  <button type="submit" name="submit"></button>
+<% end %>
