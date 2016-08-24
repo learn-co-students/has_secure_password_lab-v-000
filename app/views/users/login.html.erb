@@ -1,0 +1,7 @@
+<%= form_for :user do |f| %>
+      Email : <%= f.email_field :email %><br>
+      Password: <%= f.password_field :password %><br>
+      <%= f.submit "Log In" %>
+<% end %>
+
+<p>or if New? <%= link_to "Sign Up", signup_path %></p>
