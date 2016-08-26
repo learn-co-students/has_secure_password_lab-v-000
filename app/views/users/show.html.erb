@@ -1,0 +1,8 @@
+<h1>Hi, <%= @user.name %>.</h1>
+
+<!-- Initial solution -->
+<%#= form_tag logout_path do %>
+ <%#= submit_tag "Log Out" %>
+<%# end %>
+
+<%= button_to "Log Out", logout_path %>
