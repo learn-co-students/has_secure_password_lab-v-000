@@ -4,10 +4,10 @@
 
 <h1>Greets!</h1>
 
-<%= form_tag :user, login_path do %>
-  Username: <%= text_field_tag :name %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Log In" %>
+<%= form_for :session, url: login_path do |f| %>
+  Username: <%= f.text_field :name %>
+  Password: <%= f.password_field :password %>
+  <%= f.submit "Log In" %>
 <% end %>
 
 New user? <%= link_to "Sign up now!", signup_path %>
