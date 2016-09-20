@@ -1,0 +1,8 @@
+LOGIN PAGE
+SIGNUP PAGE
+
+<%= form_tag({controller: 'sessions', action: 'create', method: 'post'}) do %>
+  Name: <%= text_field_tag :name %>
+  Password: <%= password_field_tag :password %>
+  <%= submit_tag "Login" %>
+<% end %>
