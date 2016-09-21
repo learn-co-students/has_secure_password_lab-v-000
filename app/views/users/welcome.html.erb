@@ -1,0 +1,5 @@
+<h1>Welcome <%= @user.name %></h1>
+<p>Now that you have coded a Log In session, nothing else to do but chill or Log Out.</p>
+<%= form_tag logout_path do %>
+  <%= submit_tag "Log Out"%>
+<% end %>
