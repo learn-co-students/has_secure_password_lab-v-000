@@ -1,0 +1,10 @@
+<%= form_tag "/login", method: "post" do |f| %>
+  <%= label :user, :name %>
+  <%= text_field :user, :name %>
+
+  <%= label :user, :password %>
+  <%= text_field :user, :password %>
+
+  <%= submit_tag("Log in") %>
+<% end %>
+<p>Not signed up? <a href="/users/new"%>Create an account.</a></p>
