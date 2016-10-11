@@ -1,0 +1,15 @@
+<%#= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+<h2>Already a member? Sign in:</h2> <br>
+
+<%= form_for @user, url: login_path, method: :post do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %> <br>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %> <br>
+
+  <%= f.submit "log in" %> <br>
+<% end %>
+
+<h2>Or <%= link_to "Sign up!", new_user_path %></h2>
+
