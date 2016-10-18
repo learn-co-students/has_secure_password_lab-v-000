@@ -5,8 +5,16 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-    session[:user_id] = user.id
-    redirect_to '/create'
+    if user.save
+      session[:user_id] = user.id
+      redirect_to '/create'
+    else
+      redirect_to '/new'
+    end
+  end
+
+  def show
+    binding.pry
   end
 
   private
