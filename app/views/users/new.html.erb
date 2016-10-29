@@ -1,0 +1,15 @@
+here will be new page for use r to sign p
+<br>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+
+
+<br>
+<%= form_for :user, url: '/users' do |f| %>
+  Username: <%= f.text_field :username %> <br><br>
+  Password: <%= f.password_field :password %><br><br>
+  Confirm: <%= f.password_field :password_confirmation %>
+ <%=  f.submit "Submit" %>
+<% end %>
