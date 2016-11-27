@@ -1,23 +1,18 @@
 class SessionsController < ApplicationController
+  def new
+  end
 
   def create
-    @user = User.find_by(params[:id])
-    return head(:forbidden) unless @user.authenticate(params[:password])
-    session[:user_id] = @user.id
-    render session_path
+    user = User.find_by(name: params[:user][:name])
+    user = user.try(:authenticate, params[:user][:password])
+    return redirect_to(controller: 'sessions', action: 'new') unless user
+    session[:user_id] = user.id
+    @user = user
+    redirect_to controller: 'welcome', action: 'home'
   end
 
-  def show
+  def destroy
+    session.delete :user_id
+    redirect_to '/'
   end
-
 end
-
-
-#  post create
-#     logs you in with the correct password (FAILED - 1)
-#     rejects invalid passwords (FAILED - 2)
-#     rejects empty passwords (FAILED - 3)
-
-#       sessions POST /sessions(.:format)     sessions#create
-# new_session GET  /sessions/new(.:format) sessions#new
-#     session GET  /sessions/:id(.:format) sessions#show

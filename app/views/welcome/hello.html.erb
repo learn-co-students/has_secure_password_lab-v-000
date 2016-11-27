@@ -1,3 +1,5 @@
-<h1> Welcome! What would you like to do? </h1>
+<h1>Hi, <%= @user.name %></h1>
+<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+  <input type=submit value='logout'>
+<% end %>
 
-<h3><%= link_to "Create a User", new_user_path %>
