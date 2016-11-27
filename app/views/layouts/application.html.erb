@@ -7,6 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= link_to 'All Users', users_path %>
+<%= link_to 'Signup', signup_path %>
+<%= link_to 'Login', login_path %>
+<%= link_to 'Logout', logout_path %>
+
+<h3 class='flash_message_error'><%= flash[:error] %></h3>
+<h3 class='flash_message_success'><%= flash[:success] %></h3>
 
 <%= yield %>
 
