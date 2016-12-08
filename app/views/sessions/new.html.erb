@@ -1,0 +1,6 @@
+<h1>Login Form</h1>
+<%= form_for :user, controller: 'sessions', action: 'new' do |f| %>
+  Username: <%= f.text_field :name %><br>
+  Password: <%= f.password_field :password %><br>
+  <%= f.submit "Login" %>
+<% end %>
