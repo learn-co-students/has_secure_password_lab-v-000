@@ -12,14 +12,14 @@ RSpec.describe UsersController, type: :controller do
       expect(User.last.name).to eq('Steven')
     end
 
-    it "logs you in" do
+    it "signs you up" do
       post :create, user: steven
       expect(session[:user_id]).to eq(User.last.id)
     end
 
     it "sets your password if the confirmation matches" do
       post :create, user: steven
-      expect(User.last.authenticate(steven[:password])).to eq(User.last) 
+      expect(User.last.authenticate(steven[:password])).to eq(User.last)
     end
 
     it "redirects you if your password and confirmation don't match" do
