@@ -1,0 +1,11 @@
+<h1>Hello <%= session[:user_id] ? "#{@user.name}!" : "World" %></h1>
+
+<% if session[:user_id] %>
+	Welcome, you are logged-in.
+	<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+	  <input type=submit value='logout'>
+	<% end %>
+
+<% else %>
+	Have an account? <%= link_to "Log In", new_session_path %> or <%= link_to "Register", new_user_path %>
+<% end %>

@@ -10,17 +10,17 @@ RSpec.describe SessionsController, type: :controller do
   
   describe 'post create' do
     it 'logs you in with the correct password' do
-      post :create, user: {name: connie.name, password: connie.password}
+      post :create, name: connie.name, password: connie.password
       expect(session[:user_id]).to eq(connie.id)
     end
 
     it 'rejects invalid passwords' do
-      post :create, user: {name: connie.name, password: connie.password + 'x'}
+      post :create, name: connie.name, password: connie.password + 'x'
       expect(session[:user_id]).to be_nil
     end
 
     it 'rejects empty passwords' do
-      post :create, user: {name: connie.name, password: ''}
+      post :create, name: connie.name, password: ''
       expect(session[:user_id]).to be_nil
     end
   end
