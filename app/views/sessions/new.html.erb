@@ -1,0 +1,11 @@
+<h1>Login to your account</h1>
+
+<p>Enter your credentials below. If you are new here, please first <%= link_to "create an account", new_user_path %>.</p>
+
+<%= form_tag(sessions_path, method: :post) do %>
+	Name: <%= text_field_tag :name %> <br><br>
+	Password: <%= password_field_tag :password %> <br><br>
+
+	<%= submit_tag "Log in" %>
+
+<% end %> 
