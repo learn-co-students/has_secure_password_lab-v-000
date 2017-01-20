@@ -9,6 +9,7 @@ class UsersController < ApplicationController
       redirect_to '/users/new'
     else
       user = User.new(user_params).save
+      session[:user_id] = current_user.id
       redirect_to '/welcome/home'
     end
   end
@@ -16,7 +17,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation)
+    params.require(:user).permit(:name, :id, :password, :password_confirmation)
   end
 
 end
