@@ -4,11 +4,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    raise.params.inspect
-    user = User.find_by(name: params[:name])
-    return head(:forbidden) unless user && user.authenticate(params[:password])
-    session[:user_id] = user.id
-    redirect_to root_path
+    user = User.find_by(name: params[:user][:name])
+    if user && user.authenticate(params[:user][:password])
+      session[:user_id] = user.id
+      redirect_to root_path
+    else
+      redirect_to new_session_path
+    end
+
   end
 
 end
