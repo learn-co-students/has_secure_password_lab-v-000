@@ -1,0 +1,9 @@
+<% if @user %>
+  <h1>Hi, <%= @user.name %>.</h1>
+  <%= link_to "Log Out", session_path(@user), method: :delete %>
+<% else %>
+  <ul>
+    <li><%= link_to "Log In", new_session_path %></li>
+    <li><%= link_to "Sign Up", new_user_path %></li>
+  </ul>
+<% end %>
