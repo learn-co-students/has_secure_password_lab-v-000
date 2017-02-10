@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
 
   def new
     @user = User.new(user_params)
@@ -7,10 +7,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params).save 
+    @user = User.create(user_params)
 
-    binding.pry
+    session[:user_id] = @user.id 
+    # binding.pry
     redirect_to '/users/new'
+
   end
 
 
