@@ -1,0 +1,15 @@
+<h1>Login here!</h1>
+
+<% if flash[:notice] %>
+    <div class="notice">Errors: <%= flash[:notice] %></div>
+  <% end %><br />
+
+<%= form_for @user, url: '/login' do |f| %>
+Username: <%= f.text_field :name %><br /><br />
+Password: <%= f.password_field :password %><br /><br />
+Password_Confirmation: <%= f.password_field :password_confirmation %><br /><br />
+<%= f.submit "Login" %><br />
+<% end %>
+
+<br /><br />
+<%= link_to "Not a registered user? Click here to sign-up!", new_user_path %>

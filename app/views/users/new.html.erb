@@ -1,0 +1,12 @@
+<h1>New Users Sign Up Here!</h1>
+
+<% if flash[:notice] %>
+    <div class="notice">Errors: <%= flash[:notice] %></div>
+  <% end %><br />
+  
+<%= form_for(@user) do |f| %>
+Username: <%= f.text_field :name %><br /><br />
+Password: <%= f.password_field :password %><br /><br />
+Password_Confirmation: <%= f.password_field :password_confirmation %><br /><br />
+<%= f.submit %><br />
+<% end %>
