@@ -1,0 +1,9 @@
+<h2> Login </h2>
+<%= form_for @user, url: '/login' do |f| %>
+  Username: <%= f.text_field :name %>
+  Password: <%= f.password_field :password %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Login" %>
+<% end %>
+<br>
+<%= link_to "Not a registered user? Click here to sign-up!", new_user_path %>
