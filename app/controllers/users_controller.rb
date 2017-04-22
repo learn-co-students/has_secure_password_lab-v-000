@@ -5,13 +5,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    if @user.authenticate(params[:user][:password])
+    @user = User.new(user_params)
+    if @user.save
       session[:user_id] = @user.id
-    else
-      redirect_to controller: 'users', action: 'new'
+      redirect_to controller: 'sessions', action: 'create'
+      else
+        redirect_to controller: 'users', action: 'new'
+      end
     end
-  end
 
   private
 

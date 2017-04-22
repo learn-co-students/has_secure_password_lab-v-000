@@ -6,6 +6,9 @@ class SessionsController < ApplicationController
     session[:user_id] = @user.id
   end
 
+  def show
+  end
+
 
 
 
