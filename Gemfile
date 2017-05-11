@@ -41,6 +41,8 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
+  gem 'bcrypt'
+  gem 'pry'
 end
 
 # Access an IRB console on exception pages or by using <%= console %> in views
