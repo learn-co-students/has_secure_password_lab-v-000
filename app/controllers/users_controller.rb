@@ -12,14 +12,14 @@ class UsersController < ApplicationController
     if @user.save
       #log them in and welcome user
       session[:user_id] = @user.id
-      redirect_to #???
+      redirect_to welcome_path
     else
       render :new
     end
   end
 
   def welcome
-    if logged_id?
+    if logged_in?
       render :welcome
     else
       redirect_to login_path

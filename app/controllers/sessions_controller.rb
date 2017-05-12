@@ -1,3 +1,4 @@
+require 'pry'
 class SessionsController < ApplicationController
 
   def new
@@ -8,12 +9,13 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
     else
-      redirect_to '/login'
+      render :new
     end
   end
 
   def destroy
-    session.reset
+    session.clear
+    redirect_to login_path
   end
 
 
