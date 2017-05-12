@@ -14,7 +14,7 @@ RSpec.describe User, type: :model do
   end
 
   it 'is valid if password and password_confirmation match' do
-    user = User.new
+    user = User.new(name: "Need a name asshole")
     user.password = user.password_confirmation = 'foo'
     expect(user.valid?).to be true    
   end
