@@ -3,7 +3,12 @@ sessions/new
 
 <h1>Log In</h1>
 
-<%= form_tag :sessions do %>
+<%= form_tag '/login' do %>
+  <%= label_tag "Name: " %>
   <%= text_field_tag :name %>
-  <%= submit_tag %>
+
+  <%= label_tag "Password: " %>
+  <%= text_field_tag :password %>
+
+  <%= submit_tag 'Log In' %>
 <% end %>

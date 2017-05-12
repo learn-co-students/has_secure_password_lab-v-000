@@ -3,5 +3,9 @@ view/users/new
 <%= form_for @user do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name  %>
-  <%= f.submit %>
+  <%= f.label :password %>
+  <%= f.text_field :password  %>
+  
+  <%= f.submit "Register" %>
+  <% binding.pry %>
 <% end %>
