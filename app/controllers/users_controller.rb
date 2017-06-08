@@ -4,9 +4,13 @@ class UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
-    redirect_to signup_path unless user.save
-    session[:user_id] = user.id
-    redirect_to root_path
+
+    if user.save
+      session[:user_id] = user.id
+      redirect_to root_path
+    else
+      redirect_to signup_path, notice: "Username invalid."
+    end
   end
 
   def index
