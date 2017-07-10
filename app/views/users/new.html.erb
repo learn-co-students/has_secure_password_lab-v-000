@@ -1,0 +1,18 @@
+<% if  flash[:error] %>
+	<%= flash.alert %>
+<% end %>
+<h1>Sign up Form</h1>
+<h3>New User</h3>
+<%= form_for @user do |f| %>
+	
+	<%= f.label :name, "Username:" %> 
+	<%= f.text_field :name %><br>
+
+	<%= f.label :password, "Password: " %>
+	<%= f.password_field :password %> <br>
+
+	<%= f.label :password_confirmation, "Re-enter Password: " %>
+	<%= f.password_field :password_confirmation %> <br>
+	
+	<%= f.submit "Create User" %>
+<% end %>
