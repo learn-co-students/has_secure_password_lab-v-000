@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:message] = "Successfully created a new User!"
+      flash[:notice] = "Successfully created a new User!"
       redirect_to root_path
     else
       flash[:alert] = "Oops. Something went wrong! Try again..."
