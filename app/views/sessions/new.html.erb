@@ -1,0 +1,15 @@
+<%#= form_tag({:action=>"create", :controller=>"sessions", :method=>"POST"}) do %>
+		<!-- Username: <input type="text" name="name" id="name"> <br><br> -->
+		<!-- Password: <input type="password" name="password" id="password"> <br> -->
+		<!-- <input type="submit" value="Login"> -->
+<%# end %>
+
+
+
+<%= form_tag(sessions_path) do %>
+	<%= text_field_tag :name, '', placeholder: 'username' %>
+	<%= password_field_tag :password, '', placeholder: "password" %>
+	<%= submit_tag :submit %>
+	
+<% end -%>
+
