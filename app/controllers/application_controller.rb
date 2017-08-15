@@ -8,4 +8,12 @@ class ApplicationController < ActionController::Base
     def current_user
       User.find_by(id: params[:id])
     end
+
+    def logged_in?
+      current_user.id != nil
+    end
+
+    def require_logged_in
+      redirect_to login_path unless logged_in?
+    end
 end
