@@ -1,0 +1,18 @@
+<%= form_for @user, url:'/signup' do |f| %>
+  <p>
+    <%= f.text_field :name, placeholder: "Name" %>
+  </p>
+
+  <p>
+    <%= f.password_field :password, placeholder: "Password" %>
+  </p>
+
+  <p>
+    <%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+<%= link_to "Already have an account?", login_path %>

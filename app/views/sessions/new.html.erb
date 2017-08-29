@@ -1,0 +1,14 @@
+<%= form_for :user do |f| %>
+  <p>
+    <%= f.text_field :name, placeholder: "Name" %>
+  </p>
+
+  <p>
+    <%= f.password_field :password, placeholder: "Password" %>
+  </p>
+
+  <p>
+    <%= f.submit "Login" %>
+  </p>
+<% end %>
+<%= link_to "Create Account", signup_path %>
