@@ -1,0 +1,5 @@
+Hello! you are nice and logged in now
+
+<%= form_tag session_path(current_user.id), method: 'delete' do %>
+  <%= submit_tag "log out" %>
+<% end %>
