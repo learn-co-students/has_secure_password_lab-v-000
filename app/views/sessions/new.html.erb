@@ -1,0 +1,6 @@
+<h1>Login Form</h1>
+
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) %>
+  Name: <%= text_field_tag :name %><br />
+  Password: <%= password_field_tag :password %></p>
+  <%= submit_tag 'Log In' %>
