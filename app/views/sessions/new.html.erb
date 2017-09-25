@@ -1,0 +1,7 @@
+<h2> Login </h2>
+<%= form_for :session, url: '/' do |f| %>
+Username: <%= f.text_field :name %>
+Password: <%= f.password_field :password %>
+Password Confirmation: <%= f.password_field :password_confirmation %>
+<%= f.submit "Submit" %>
+<% end %>
