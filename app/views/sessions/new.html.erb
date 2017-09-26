@@ -1,0 +1,33 @@
+<h1> Welcome </h1>
+
+<%= form_for (@user) do |f| %>
+  <h2>Log In</h2>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p class="button"><%= f.submit 'Log In' %></p>
+<% end %>
+
+<h3>-OR-</h3>
+
+<%= form_for (@user) do |f| %>
+  <h2>Sign Up</h2>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p class="button"><%= f.submit 'Sign Up'%></p>
+<% end %><br><br>
