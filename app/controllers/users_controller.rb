@@ -5,13 +5,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    if params[:user][:password_confirmation] == params[:user][:password]
-      @user = User.create(user_params)
-      session[:user_id] = @user.id
-      redirect_to '/homepage'
-    else
-      redirect_to :action => 'new'
-    end
+    @user = User.create(user_params)
+    return redirect_to action: 'new' unless @user.save
+    session[:user_id] = @user.id
+    redirect_to '/homepage'
   end
 
   def homepage
