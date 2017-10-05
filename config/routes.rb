@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/users/new' => 'users#new'
   post '/users' => 'users#create'
   get '/users/home' => 'users#home'
+  post '/login' => 'sessions#create'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

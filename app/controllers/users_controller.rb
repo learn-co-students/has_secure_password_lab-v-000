@@ -1,15 +1,20 @@
+require 'pry'
 class UsersController < ApplicationController
   def new
   end
 
   def create
-    @user = User.new(user_params).save
+    @user = User.create(user_params)
+    return redirect_to controller: 'users', action: 'new' unless @user.save
+    session[:user_id] = @user.id
     redirect_to '/users/home'
   end
 
   def home
-    
+    binding.pry
+    @user = User.find_by(name: session[:name])
   end
+
   private
 
   def user_params
