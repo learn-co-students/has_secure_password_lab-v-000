@@ -1,3 +1,5 @@
+# rails generate controller Users new create --no-helper --no-assets --no-controller-specs
+
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
@@ -19,7 +21,7 @@ RSpec.describe UsersController, type: :controller do
 
     it "sets your password if the confirmation matches" do
       post :create, user: steven
-      expect(User.last.authenticate(steven[:password])).to eq(User.last) 
+      expect(User.last.authenticate(steven[:password])).to eq(User.last)
     end
 
     it "redirects you if your password and confirmation don't match" do
