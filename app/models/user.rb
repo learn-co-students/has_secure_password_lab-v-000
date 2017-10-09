@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  validates_confirmation_of :password
+  # validates_confirmation_of :password
 
   # def password_valid
   #    errors.add(:password, "does not match") unless password == password_confirmation
