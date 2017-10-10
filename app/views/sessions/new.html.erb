@@ -1,0 +1,9 @@
+<%= form_tag(session_path) do %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :password %><br>
+  <%= f.password_field :password %><br>
+  <%= f.submit "Log In" %>
+<% end %>
+<br><br>
+<%= link_to "New User", new_user_path %>
