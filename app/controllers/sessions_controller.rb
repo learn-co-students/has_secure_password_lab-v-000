@@ -1,16 +1,18 @@
 class SessionsController < ApplicationController
 
   def login
-    if session[:user_id].present?
+    if logged_in?
       redirect_to welcome_path
     else
+      @user = User.new
       render :login
     end
   end
 
   def create
-    @user = User.find_by(name: params[:name])
-    @user = @user.try(:authenticate, params[:password])
+    # binding.pry
+    @user = User.find_by(name: params[:user][:name])
+    @user = @user.try(:authenticate, params[:user][:password])
     if @user
       session[:user_id] = @user.id
       redirect_to welcome_path
