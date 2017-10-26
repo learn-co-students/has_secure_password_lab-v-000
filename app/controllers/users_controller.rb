@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :require_login, only: [:welcome]
 
   def new
-    if session[:user_id].present?
+    if logged_in?
       redirect_to welcome_path
     else
       @user = User.new

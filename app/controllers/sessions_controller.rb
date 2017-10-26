@@ -1,16 +1,12 @@
-class SessionsController
+class SessionsController < ApplicationController
 
-  def new
-    render :login
+  def login
+    if session[:user_id].present?
+      redirect_to welcome_path
+    else
+      render :login
+    end
   end
-
-
-  def create
-    @user = User.find_by(name: params[:name])
-    return head(:forbidden) unless @user.authenticate(params[:password])
-    session[:user_id] = @user.id
-  end
-
 
   def create
     @user = User.find_by(name: params[:name])
