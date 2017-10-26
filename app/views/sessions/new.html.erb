@@ -1,0 +1,5 @@
+<%= form_for @user, controller: 'sessions', action: 'create' do |f| %>
+  Name: <%= f.text_field :name %><br>
+  Password: <%= f.password_field :password %><br>
+  <%= f.submit "Log In" %> Or <%= link_to(controller: 'users', action: 'new') {'Sign Up'} %>
+<% end %>

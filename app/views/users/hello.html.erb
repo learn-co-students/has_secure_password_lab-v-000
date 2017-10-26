@@ -1,0 +1,12 @@
+<% if logged_in? %>
+
+  Hi, <%= @user.name %>!
+
+  <%= render 'application/logout' %>
+
+<% else %>
+
+  Welcome!<br>
+  <%= link_to(controller: 'users', action: 'new') {'Sign Up'} %> Or <%= link_to(controller: 'sessions', action: 'new') {'Log In'} %>
+
+<% end %>
