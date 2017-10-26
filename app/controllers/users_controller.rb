@@ -1,20 +1,27 @@
 class UsersController < ApplicationController
+  before_action :require_login, only: [:welcome]
 
   def new
-    @user = User.new
-    render :signup
+    if session[:user_id].present?
+      redirect_to welcome_path
+    else
+      @user = User.new
+      render :signup
+    end
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      render :welcome
+      redirect_to welcome_path
     else
       redirect_to signup_path
     end
   end
 
+  def welcome
+  end
 
   private
 
