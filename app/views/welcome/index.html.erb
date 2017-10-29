@@ -1,3 +1,5 @@
 <h1>Hi, <%= @user.name %>.</h1>
 
-<%= button_to "Logout", logout_path %>
+<%= form_tag({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+	<input type="submit" value="logout">
+<% end %>
