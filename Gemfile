@@ -12,7 +12,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+gem 'bcrypt'
+#encrypt ALL the things
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -25,7 +26,8 @@ gem 'jbuilder', '~> 2.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Use Unicorn as the app server
+# Use Unicorn as the app serverrspec ./spec/controllers/users_controller_spec.rb:25 # UsersController create redirects you if your password and confirmation don't match
+#rspec ./spec/models/user_spec.rb:8 # User has a na
 # gem 'unicorn'
 
 # Use Capistrano for deployment
