@@ -3,10 +3,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    if user = User.new(user_params).save
-      session[:user_id] = User.last.id
+    @user = User.new(user_params)
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to controller: 'welcome', action: 'home'
     else
-      redirect_to users_new_url
+      redirect_to controller: 'users', action: 'new'
     end
   end
 

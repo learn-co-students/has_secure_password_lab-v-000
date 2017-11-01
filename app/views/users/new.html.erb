@@ -1,5 +1,5 @@
 <h2>Sign Up</h2>
-<%= form_for :user, url: '/users' do |f| %>
+<%= form_for @user, controller: 'users', action: 'create' do |f| %>
   Username: <%= f.text_field :username %>
   <br>
   Password: <%= f.password_field :password %>
