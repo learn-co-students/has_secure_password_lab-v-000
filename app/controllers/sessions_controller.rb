@@ -4,13 +4,25 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(name: params[:user][:name])
-    session[:user_id] = @user.id
-    if @user.password == @user.password_confirmation && !@user.password.empty?
+    @user = @user.try(:authenticate, params[:user][:password])
+    if @user
+      session[:user_id] = @user.id
       redirect_to '/home'
     else
-      session[:user_id] = nil
-      redirect_to '/' #just to get rid of 'template missing' error
+      redirect_to controller: 'sessions', action: 'new'
     end
   end
+
+    # def create
+    #   user = User.find_by(name: params[:user][:name])
+    #   user = user.try(:authenticate, params[:user][:password])
+    #   if user
+    #     session[:user_id] = user.id
+    #     @user = user
+    #     redirect_to controller: 'users', action: 'home'
+    #   else
+    #     redirect_to controller: 'sessions', action: 'new'
+    #   end
+    # end
 
 end
