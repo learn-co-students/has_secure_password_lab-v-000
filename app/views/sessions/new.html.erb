@@ -1,0 +1,13 @@
+Login here
+
+<%= form_for @user, url: sessions_create_path do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %><br>
+
+  <%= f.submit "log in" %><br>
+
+<% end %>
+  Or <%= link_to 'Sign up', new_user_path %>
