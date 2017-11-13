@@ -4,10 +4,20 @@ class SessionsController < ApplicationController
   end
 
   def create
+    # binding.pry
    @user = User.find_by(name: params[:user][:name])
-   return head(:forbidden) unless @user.authenticate(params[:user][:password])
-   session[:user_id] = @user.id
-   redirect_to welcome_path
+   if @user
+     if @user.authenticate(params[:user][:password])
+       session[:user_id] = @user.id
+       redirect_to welcome_path
+     else
+       flash[:alert] = "Incorrect password"
+       redirect_to login_path
+     end
+   else
+     flash[:alert] = "User name not found in our records"
+     redirect_to login_path
+   end
   end
 
   def destroy
