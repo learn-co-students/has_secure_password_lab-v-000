@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+
+  match 'sessions/create' => 'sessions#create', :via => :post
+
+  resources :users
+  match 'sessions/new' => 'sessions#new', :via => :get
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
