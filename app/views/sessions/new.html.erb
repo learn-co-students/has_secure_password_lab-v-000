@@ -1,0 +1,4 @@
+<%= form_for @user, url: sessions_path do |f| %>
+  <%= render 'layouts/form', locals: {f: f} %>
+  <%=f.submit %>
+<% end %>

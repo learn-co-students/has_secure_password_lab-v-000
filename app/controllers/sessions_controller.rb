@@ -1,12 +1,13 @@
 class SessionsController < ApplicationController
-  before_action :set_user, only: [:show, :create]
+  before_action :current_user, only: [:show]
   def new
     @user = User.new
   end
 
   def create
-    @user = User.find_by(name: params[:name])
-    return head(:forbidden) unless @user.authenticate(password: params[:password])
+    # binding.pry
+    @user = User.find_by(name: session_params[:name])
+    return head(:forbidden) unless @user.authenticate(session_params[:password])
     session[:user_id] = @user.id
     redirect_to session_path(@user)
   end
@@ -14,7 +15,16 @@ class SessionsController < ApplicationController
   def show
   end
 
-  def set_user
-    @user = User.find_by(name: params[:name])
+  def delete
+    session.delete :user_id if current_user
+    redirect_to login_path
+  end
+
+  def current_user
+    @user = User.find_by(id: session[:user_id])
+  end
+
+  def session_params
+    params.require(:user).permit(:name, :password)
   end
 end
