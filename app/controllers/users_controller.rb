@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to session_path(@user)
     else
-      binding.pry
+      # binding.pry
       if @user.errors.messages[:name]
         flash[:notice] = "Error Creating Account. Username taken."
       else
