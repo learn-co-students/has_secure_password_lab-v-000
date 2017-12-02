@@ -6,18 +6,20 @@ class UsersController < ApplicationController
   end
 
   def create
+
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to user_path(@user)
+      redirect_to session_path(@user)
     else
-      flash[:notice] = "Error Creating Account. Please Try Again"
+      binding.pry
+      if @user.errors.messages[:name]
+        flash[:notice] = "Error Creating Account. Username taken."
+      else
+        flash[:notice] = "Error Creating Account. Passwords don't match."
+      end
       redirect_to new_user_path
     end
-  end
-
-  def show
-    binding.pry
   end
 
 
