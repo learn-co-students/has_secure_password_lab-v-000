@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       redirect_to user_path(@user)
     else
       flash[:notice] = "Error Creating Account. Please Try Again"
-      render "users/new.html.erb"
+      redirect_to new_user_path
     end
   end
 
