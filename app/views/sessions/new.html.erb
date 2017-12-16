@@ -1,0 +1,6 @@
+<!-- Log In form -->
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+  Username: <%=text_field_tag :name %><br></br>
+  Password: <%= text_field_tag :password %><br></br>
+  <input type=submit value='login'>
+<% end %>
