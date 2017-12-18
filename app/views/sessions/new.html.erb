@@ -1,0 +1,11 @@
+<h1>Login Page</h1>
+
+
+<%= form_for(login_url) do |f| %>
+    Username:<%= f.text_field :name %>
+    Password: <%= f.password_field :password %>
+     <%= f.submit "Submit" %>
+<% end %>
+    
+  
+
