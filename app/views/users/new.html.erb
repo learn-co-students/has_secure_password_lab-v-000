@@ -1,0 +1,10 @@
+<h1>Sign Up</h1>
+<form method='post' action='/create'>
+  Username: <input type='text' name='user[name]'  /><br />
+  Password <input type='password' name='user[password]' /><br />
+  Password Confirmation <input type='password' name='user[password_confirmation]'   /><br />
+  <input type='submit'>
+</form>
+
+
+<%= link_to 'Already signed up?', login_path , :method => 'get'   %>

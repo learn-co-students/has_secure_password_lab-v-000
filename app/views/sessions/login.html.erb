@@ -1,0 +1,9 @@
+<h1>Log In</h1>
+
+<form method='post' action='/login'>
+  Username: <input type='text' name='user[name]'  /><br />
+  Password <input type='password' name='user[password]' /><br />
+  <input type='submit'>
+</form>
+
+<%= link_to 'Need to sign up?', new_path , :method => 'get'   %>
