@@ -9,9 +9,11 @@ class SessionsController < ApplicationController
 
     return redirect_to(controller: 'sessions', action: 'new') unless user
 
+    @user = user
+
     session[:user_id] = @user.id
 
-    @user = user
+    
 
     redirect_to controller: 'welcome', action: 'home'
   end
