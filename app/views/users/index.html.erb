@@ -1,6 +1,6 @@
-<h1>Hi, <%@user.name %></h1>
+<h1>Hi, <%= @user.name %></h1>
 <%= form_form :user, url: '/users' do |f| %>
-username: <%= f.text_field :nane %>
+username: <%= f.text_field :name %>
 password <%= f.password_field :passweord %>
 password confirmation: <%= f.password_field :password_confirmation %>
 <%=f.submit "submit" %>
