@@ -1,0 +1,3 @@
+def WelcomeController < ApplicationController
+  
+end
