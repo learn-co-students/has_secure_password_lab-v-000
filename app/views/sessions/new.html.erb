@@ -1,0 +1,10 @@
+<h1>Login!</h1>
+<%= form_for(:sessions, url: login_path, method: 'post') do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name%>
+<%= f.label :password%>
+<%= f.password_field :password%>
+<%= f.label "Password Confirmation" %>
+<%= f.password_field :password_confirmation %>
+<%= f.submit "Submit"%>
+<% end %>
