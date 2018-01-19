@@ -1,0 +1,7 @@
+<h1>Hi <%= @user.name %></h1>
+
+<h4>And Welcome to your HOME PAGE!</h4>
+
+<%= form_tag logout_path do %>
+  <%= submit_tag "Logout" %>
+<% end %>
