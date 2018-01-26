@@ -1,0 +1,25 @@
+<h1>Sign Up</h1>
+
+<%= form_for @user do |f| %>
+  <%= f.label :name, "Username:" %>
+  <%= f.text_field :name %><br><br>
+  <%= f.label :password, "Password:" %>
+  <%= f.password_field :password %><br><br>
+  <%= f.label :password_confirmation, "Password Confirmation:" %>
+  <%= f.password_field :password_confirmation %><br><br>
+  <%= f.submit "sign up" %>
+<% end %>
+
+<!-- Rails form helper #form_for generates the HTML <form> below:
+
+<form class="new_user" id="new_user" action="/users" accept-charset="UTF-8" method="post">
+  <input name="utf8" type="hidden" value="✓">
+  <input type="hidden" name="authenticity_token" value="string here==">
+  <label for="user_name">Username:</label>
+  <input type="text" name="user[name]" id="user_name"><br><br>
+  <label for="user_password">Password:</label>
+  <input type="password" name="user[password]" id="user_password"><br><br>
+  <label for="user_password_confirmation">Password Confirmation:</label>
+  <input type="password" name="user[password_confirmation]" id="user_password_confirmation"><br><br>
+  <input type="submit" name="commit" value="sign up">
+</form>
