@@ -1,0 +1,21 @@
+<h1>Log In</h1>
+
+<%= form_for :user, url: login_path do |f| %>
+  <%= f.label :name, "Username:" %>
+  <%= f.text_field :name %><br><br>
+  <%= f.label :password, "Password:" %>
+  <%= f.password_field :password %><br><br>
+  <%= f.submit "log in" %> or <%= link_to "sign up", new_user_path %>
+<% end %>
+
+<!-- Rails helper method #form_for generates the HTML form below:
+
+<form class="new_user" id="new_user" action="/login" accept-charset="UTF-8" method="post">
+  <input name="utf8" type="hidden" value="✓">
+  <input type="hidden" name="authenticity_token" value="a long string==">
+  <label for="user_name">Username:</label>
+  <input type="text" name="user[name]" id="user_name"><br><br>
+  <label for="user_password">Password:</label>
+  <input type="password" name="user[password]" id="user_password"><br><br>
+  <input type="submit" name="commit" value="log in"> or <a href="/users/new">sign up</a>
+</form>
