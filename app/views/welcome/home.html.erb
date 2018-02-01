@@ -1,0 +1,4 @@
+<h1>Hi, <%= @user.name %>.</h1>
+<%= form_for @user, url: logout_path, method: :post do |f| %>
+  <%= f.submit "logout" %>
+<%end%>
