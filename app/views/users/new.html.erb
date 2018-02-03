@@ -1,0 +1,12 @@
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
+<h2>Create New User</h2>
+<%= form_for :user, url: '/users' do |f| %>
+  <%= f.text_field :name, placeholder: "Name" %><br>
+  <%= f.password_field :password, placeholder: "Password" %><br>
+  <%= f.password_field :password_confirmation, placeholder: "Password Again" %><br></br>
+  <%= f.submit %>
+<% end %>
+<p><%= link_to "Already a user? Login", login_path %>

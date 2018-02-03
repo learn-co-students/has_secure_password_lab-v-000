@@ -1,0 +1,10 @@
+<h2>Log In </h2>
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+  <input name="user[name]">
+  <input name="user[password]">
+  <input type=submit value="login">
+<% end %>
+<p><%= link_to "Create new user", new_user_path %>
