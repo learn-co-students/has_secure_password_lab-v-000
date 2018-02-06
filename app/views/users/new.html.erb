@@ -1,0 +1,14 @@
+<h2>Create User</h2>
+<%= form_for @user, url:users_path, method: :post do |f| %>
+  <p>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+  </p><p>
+  <%= f.label :password %>:
+  <%= f.password_field :password %><br />
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+  </p><p>
+  <%= f.submit %>
+  </p>
+<% end %>
