@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   end
 
   def new
+    redirect_to welcome_path, alert: "Please log out first!" if logged_in?
   end
 
 
