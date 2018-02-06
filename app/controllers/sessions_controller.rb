@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   
   def index
     if !!session[:user_id]
-      @user = User.find_by(id: session[:user_id])#some code and then render :show
+      @user = User.find_by(id: session[:user_id])
     else
       redirect_to new_session_path
     end
