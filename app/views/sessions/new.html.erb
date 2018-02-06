@@ -1,6 +1,12 @@
 <h1>Please login.</h1>
-<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
-<%= text_field_tag 'name' %>
-  <%= password_field_tag 'password' %>
-  <input type=submit value='login'>
+<%= form_for @user, url:login_path, method: :post do |f| %>
+  <p>
+  <%= f.label :name %>:
+  <%= f.text_field :name %><br />
+  </p><p>
+  <%= f.label :password %>:
+  <%= f.password_field :password %>
+  </p><p>
+  <%= f.submit %>
+  </p>
 <% end %>
