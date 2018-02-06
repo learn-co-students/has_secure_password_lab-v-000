@@ -1,0 +1,9 @@
+<% if session[:user_id] %>
+  <h1>Welcome, <%= @user.name %></h1>
+  <%= form_tag session_path(current_user.id), method: 'delete' do %>
+    <%= submit_tag "Log out" %>
+  <% end %>
+<% else %>
+  <h1>Welcome</h1>
+  <%= link_to 'Log in', new_session_path %> | <%= link_to 'Sign up', new_user_path %>
+<% end %>
