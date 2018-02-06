@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
+  def home
     @user = find_by_id
   end
 
