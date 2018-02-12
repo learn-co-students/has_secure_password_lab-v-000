@@ -11,5 +11,11 @@ class ApplicationController < ActionController::Base
     @user ||= User.find(session[:user_id]) unless session[:user_id].nil?
   end
 
+  def require_login
+    if !logged_in?
+      redirect_to '/login'
+    end
+  end
+
   helper_method :current_user
 end

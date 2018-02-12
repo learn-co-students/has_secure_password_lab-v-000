@@ -1,12 +1,9 @@
 class SessionsController < ApplicationController
+  skip_before_action :require_login, only: [:new, :create]
 
   def new
-    if logged_in?
-      redirect_to '/welcome'
-    else
-      @user = User.new
-      render :login
-    end
+    @user = User.new
+    render :login
   end
 
   def create
@@ -23,6 +20,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session.destroy
-    redirect_to '/login'
+    redirect_to login_path
   end
 end
