@@ -1,0 +1,5 @@
+<%= form_for(@user), url: login_path, method: :post do |f| %>
+  <%= f.text_input :name %>
+  <%= f.text_input :password %>
+  <%= f.submit %>
+<% end %>
