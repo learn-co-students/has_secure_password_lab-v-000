@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 
     @user = user
 
-    redirect_to 'welcome/home'
+    redirect_to 'welcome/home' #controller: 'welcome', action: 'home' is another way to do the same thing.
   end
 
   def destroy
