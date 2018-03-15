@@ -1,10 +1,24 @@
 Rails.application.routes.draw do
+  get '/users/new' => 'users#new'
+
+  # get 'user/create'
+
+  get '/users/home' => 'users#home', as: 'home'
+  post '/users' => 'users#create'
+
+  resources :users, only: [:new, :create]
+  resources :sessions, only: [:create]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  # get 'user/new'
 
+  # get 'user/create'
+
+  # get 'user/home'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
