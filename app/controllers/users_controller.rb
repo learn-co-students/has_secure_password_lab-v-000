@@ -6,6 +6,7 @@ class UsersController < ApplicationController
         session[:user_id] = user.id
       render :index
     else
+      binding.pry
       redirect_to '/users/new'
     end
 
