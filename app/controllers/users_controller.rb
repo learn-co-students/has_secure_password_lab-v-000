@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   #   end
 
 def create 
-   @user = User.new(user_params) 
+   @user = User.new(name: params[:user][:name], password: params[:user][:password], password_confirmation: params[:user][:password_confirmation]) 
      if @user && @user.password == @user.password_confirmation 
        @user.save 
        flash[:success] = "You have successfully signed up and logged in" 
