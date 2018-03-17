@@ -71,3 +71,10 @@ Rails.application.routes.draw do
       return redirect_to(controller: 'sessions', action: 'new') unless logged_in?
     end
   end
+
+  class WelcomeController < ApplicationController
+    before_action :require_logged_in
+
+    def home
+    end
+  end
