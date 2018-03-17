@@ -11,13 +11,21 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       #redirect_to @user
-      redirect_to controller: "welcome", action: 'home'  
+      redirect_to controller: "welcome", action: 'home'
     else
-      redirect_to root_path
-      #redirect_to controller: "users", action: 'new' unless session[:name]
+      #redirect_to root_path
+      redirect_to controller: "users", action: 'new' 
     end
   end
 
+  	def show
+  		if session.include? :user_id
+  			@user = User.find(params[:id])
+  			render :show
+  		else
+  			redirect_to new_user_path
+  		end
+  	end
 
   def destroy
       session.delete :user_id
