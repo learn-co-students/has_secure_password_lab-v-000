@@ -1,16 +1,29 @@
 class UsersController < ApplicationController
-  def create
-    user = User.create(user_params)
+  # def create
+  #   user = User.create(user_params)
+  #
+  #   if user.try(:authenticate, params[:user][:password])
+  #     binding.pry
+  #
+  #       session[:user_id] = user.id
+  #     render :index
+  #   else
+  #     redirect_to '/users/new'
+  #   end
 
-    if user.try(:authenticate, params[:user][:password])
-        session[:user_id] = user.id
-      render :index
-    else
-      binding.pry
-      redirect_to '/users/new'
-    end
+def create 
+   @user = User.new(name: params[:user][:name], password: params[:user][:password], password_confirmation: params[:user][:password_confirmation]) 
+     if @user && @user.password == @user.password_confirmation 
+       @user.save 
+       flash[:success] = "You have successfully signed up and logged in" 
+       session[:user_id] = @user.id 
+       # welcome 
+     else 
+       # flash[:error] = "You must signup before logging in" 
+       redirect_to '/users/new' 
+     end 
+   end
 
-  end
 
   private
 
