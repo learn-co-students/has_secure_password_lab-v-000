@@ -15,13 +15,10 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       session[:user_name] = @user.name
-      #session[:name] = @user.name.last
-      #session[:name] = @user.last.name
-      #session[:name] = @user.name
 # UsersController create logs you in
-        redirect_to root_path
+      redirect_to new_user_path
     else
-      render 'users/new'
+      render '/'
     end
   end
 
