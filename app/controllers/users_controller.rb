@@ -11,8 +11,13 @@ class UsersController < ApplicationController
   def create
     @user = User.new
     @user.password = params[:user][:password]
+    @user.name = params[:user][:name]
     if @user.save
       session[:user_id] = @user.id
+      session[:user_name] = @user.name
+      #session[:name] = @user.name.last
+      #session[:name] = @user.last.name
+      #session[:name] = @user.name
 # UsersController create logs you in
         redirect_to root_path
     else
