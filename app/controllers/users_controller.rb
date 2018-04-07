@@ -3,7 +3,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params).save
+    @user = User.create(user_params)
+    return redirect_to '/users/new' unless @user.save
+    session[:user_id] = @user.id
+    redirect_to '/welcome/home'
   end
 
   private
