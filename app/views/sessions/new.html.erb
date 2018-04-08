@@ -1,0 +1,6 @@
+<%= form_tag ('/login') do %>
+  Username: <%= text_field_tag :name %>
+  Password: <%= password_field_tag :password %>
+  Password Confirmation: <%= password_field_tag :password_confirmation %>
+  <%= submit_tag "Login" %>
+<% end %>
