@@ -1,0 +1,10 @@
+<h1>New User</h1>
+<%=form_for @user do |f|%>
+<%=f.label "Username"%><br>
+<%=f.text_field :name%><br></br>
+<%=f.label "Password"%><br>
+<%=f.text_field :password%><br></br>
+<%=f.label "Confirm Password"%><br>
+<%=f.text_field :password_confirmation%><br></br>
+<%=f.submit%>
+<%end%>
