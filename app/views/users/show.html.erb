@@ -1,0 +1,4 @@
+<%= content_tag(:h2, "Hi, #{current_user}") %>
+<%= form_tag "/logout", method: "post" do %>
+	<%= submit_tag("Log Out") %>
+<% end %>
