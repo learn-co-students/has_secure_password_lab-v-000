@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
 
   def login
   end
-  
+
 end
