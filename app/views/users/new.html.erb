@@ -3,5 +3,6 @@
 <%= form_for(@user) do |f| %>
   <%= f.text_field :name, :placeholder => "Enter Your Username" %>
   <%= f.password_field :password, :placeholder => "Enter your Password" %>
+  <%= f.password_confirmation 
   <%= f.submit %>
   <% end %>
