@@ -8,6 +8,11 @@
 </head>
 <body>
 
+  <h3><% if flash[:alert].present? %>
+    <%= flash[:alert] %>
+  <% end %></h3>
+
+
 <%= yield %>
 
 </body>
