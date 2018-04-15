@@ -1,21 +1,8 @@
 class SessionsController < ApplicationController
   
-    
-   def create
-     if !params[:name] || params[:name].empty? || params[:password] != params[:password_confirmation]
-       redirect_to '/users/new'
-     else
+  def create
+    @user = User.find_by(name: params[:name])
+    return head(:forbidden) unless session[:user_id]
     session[:user_id] = @user.id
-    redirect_to "/welcome/welcome"
-     end
-   end
-  
-  def destroy
-    if session[:name] != nil
-    session.delete(:name)
-  else
-    session[:name] == nil
-    end
-    redirect_to root_path
   end
 end
