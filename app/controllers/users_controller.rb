@@ -1,11 +1,15 @@
 class UsersController < ApplicationController
+   
+   def new
+   end
+    
   def create
-    user = User.new(user_params)
-    if !user.name || user.name.empty? || !has_secure_password
-        redirect_to '/users/new'
-    else
-        session[:user_id] = user.id
+   if @user = User.new(user_params).save
+       @user = session[:user_id]
         redirect_to '/welcome/welcome'
+    else
+        redirect_to '/users/new'
+  end
   end
 
   private
