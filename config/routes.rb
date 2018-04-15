@@ -8,7 +8,7 @@ Rails.application.routes.draw do
    
    
   get 'sessions/create'
-
+  get 'users/create'
    root 'welcome#welcome'
   # get '/sessions' => 'sessions#create'
   # post '/sessions' => 'sessions#create'
