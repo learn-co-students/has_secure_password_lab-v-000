@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     
   def create
    if @user = User.new(user_params).save
-       @user = session[:user_id]
+       session[:user_id] - @user.id
         redirect_to '/welcome/welcome'
     else
         redirect_to '/users/new'
