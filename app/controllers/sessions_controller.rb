@@ -1,13 +1,12 @@
 class SessionsController < ApplicationController
-  helper_method :current_user
   
     
    def create
-     if !params[:name] || params[:name].empty?
-       redirect_to '/sessions/new'
+     if !params[:name] || params[:name].empty? || params[:password] != params[:password_confirmation]
+       redirect_to '/users/new'
      else
-    session[:name] = params[:name]
-    redirect_to "/application/index"
+    session[:user_id] = @user.id
+    redirect_to "/welcome/welcome"
      end
    end
   
