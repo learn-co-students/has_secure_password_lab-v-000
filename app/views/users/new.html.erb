@@ -1,0 +1,6 @@
+<%= form_tag ("/users") do %>
+  Name: <%= text_field_tag "name" %><br>
+  Password: <%= text_field_tag "password" %><br>
+  Password_confirmation: <%= text_field_tag "password confirmation" %><br>
+   <input type=submit value='signup'>
+<% end %>
