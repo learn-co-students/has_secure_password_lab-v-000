@@ -6,18 +6,20 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   resources :users, only: [:new, :create]
    
-   
+ 
   get 'sessions/create'
   get 'users/create'
-   root 'welcome#welcome'
+ 
+   root 'users#new'
   # get '/sessions' => 'sessions#create'
   # post '/sessions' => 'sessions#create'
   
- 
+ get '/users' => 'users#new'
+ post '/users' => 'users#create'
   get '/login' => 'session#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'users#destroy'
-# get 'welcome/welcome' => 'welcome#welcome'
+ get 'welcome/welcome' => 'welcome#welcome'
  
     
 

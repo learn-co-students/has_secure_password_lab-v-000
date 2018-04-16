@@ -9,11 +9,11 @@ class ApplicationController < ActionController::Base
   end
   
     def login
-        current_user.id != nil
+        current_user != nil
     end
     
      def require_login
-    return redirect_to(controller: 'sessions', action: 'new') unless login?
+    return redirect_to(controller: 'users', action: 'create') unless login
   end
 end
 

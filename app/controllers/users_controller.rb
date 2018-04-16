@@ -1,16 +1,16 @@
 class UsersController < ApplicationController
-   helper_method :current_user
+  
    def new
    end
     
    def create
-      @user = User.create(user_params)
-     if @user.save
+      @user = User.new(user_params)
+     if !@user.save
+          redirect_to '/users/new'
+      else
+         @user.save
     session[:user_id] = @user.id
-    redirect_to '/welcome/welcome'
-else
-    redirect_to '/users/new'
-
+redirect_to '/welcome/welcome'
   end
   end
 
