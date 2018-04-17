@@ -1,22 +1,15 @@
 class SessionsController < ApplicationController
 
   def create
-    if params[:name] != ''
-      session[:name] = params[:name]
-    end
+    user = User.find_by(name: params[:user][:name])
+    binding.pry
+    return head(:forbidden) unless user.authenticate(params[:password])
+    session[:user_id] = user.id
 
-    if session[:name]
-      redirect_to '/'
-    else
-      redirect_to login_path
-    end
+    redirect_to '/'
   end
 
   def destroy
-    if session[:name]
-      session.destroy
-    end
 
-    redirect_to login_path
   end
 end
