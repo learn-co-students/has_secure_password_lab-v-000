@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  resources :sessions, only: [:new, :create]
+  post 'sessions/destroy'
+
+  resources :users, only: [:new, :create]
+
+  get 'users/homepage'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

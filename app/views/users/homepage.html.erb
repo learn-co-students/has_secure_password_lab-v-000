@@ -1,0 +1,6 @@
+<h1>Hi, <%= @user.name %>.</h1>
+
+
+<%= form_tag sessions_destroy_path do %>
+  <%= submit_tag 'logout' %>
+<% end %>
