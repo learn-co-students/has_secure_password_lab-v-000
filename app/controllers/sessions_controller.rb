@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
   before_action :set_user, only: [:create]
   def new
+    @user = User.new
   end
 
   def create
@@ -8,7 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id]=@user.id
       redirect_to welcome_home_path
     else
-      redirect_to login_path
+      redirect_to login_path, alert: "Please, try it again"
     end
   end
 
@@ -18,9 +19,6 @@ class SessionsController < ApplicationController
   end
 
   private
-  def user_params
-    params.require(:user).permit(:name, :password, :password_confirmation)
-  end
   def set_user
     @user = User.find_by(name: params[:user][:name])
   end

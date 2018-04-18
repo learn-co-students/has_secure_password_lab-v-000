@@ -1,5 +1,8 @@
 class WelcomeController < ApplicationController
+  before_action :require_password
   def home
-    byebug
+    current_user
   end
+
+
 end
