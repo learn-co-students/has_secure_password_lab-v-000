@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
     reset_session
     redirect_to login_path
   end
+
   private
   def user_params
     params.require(:user).permit(:name, :password, :password_confirmation)
