@@ -1,4 +1,7 @@
-<%= form_for @user do |f| %>
-  <%= render '/users/form', f: f %>
-  <%= f.submit "login" %>
+<%= form_tag login_path do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %><br />
+  <%= label_tag :password %>
+  <%= password_field_tag :password %><br />
+  <%= submit_tag "login" %>
 <% end %>
