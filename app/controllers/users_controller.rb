@@ -1,23 +1,20 @@
 class UsersController < ApplicationController
 
-  def current_user
-    session[:name]
-  end
-
   def new
   end
 
   def create
-    @user=User.create(user_params)
-      return redirect_to '/users/new' unless @user.save
-      @user.id=session[:user_id]
+    if params[:user][:password]==params[:user][:password_confirmation]
+      @user=User.create(user_params)
+      session[:user_id]=@user.id
       redirect_to '/users/homepage'
+    else
+      redirect_to '/users/new'
+    end
   end
 
   def homepage
-    if current_user
-      @user=current_user
-    end
+    @user=User.find_by(id: session[:user_id])
   end
 
   private

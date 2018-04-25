@@ -1,17 +1,23 @@
 class SessionsController < ApplicationController
 
-  def new
+  def create
+    if params[:user][:name].blank? ||  params[:user][:password].blank?
+      redirect_to '/login'
+    else
+      if @user=User.find_by(name: params[:user][:name])
+        if @user.authenticate(params[:user][:password])
+          session[:user_id]=@user.id
+          redirect_to '/users/homepage'
+        else
+          redirect_to '/login'
+        end
+      end
+    end
   end
 
-  def create
-    if params[:password].blank? || params[:password_confirmation].blank?
-      redirect_to '/login'
-    elsif
-      @user=User.find_by(name: params[:name])
-        return head(:forbidden) unless @user.authenticate(params[:password])
-        session[:user_id]=@user.id
-        redirect_to '/users/homepage'
-    end
+  def destroy
+    session.delete :name
+    redirect_to '/login'
   end
 
 end
