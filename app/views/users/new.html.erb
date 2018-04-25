@@ -1,0 +1,15 @@
+<h1>Register</h1>
+
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %><br>
+
+  <label for="user_password_confirmation">Confirm Password</label>
+  <input type="password" name="user[password_confirmation]"
+    id="user_password_confirmation"><br>
+
+  <%= f.submit %>
+<% end %>
