@@ -1,0 +1,7 @@
+<h3>Sign In</h3>
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+	<input type="text" name="name" placeholder="name">
+	<input type="password" name="password" placeholder="Type in your password">
+  <input type="password" name="password_confirmation" placeholder="confirmation">
+	<input type="submit" value="Sign-In">
+<% end %>

@@ -1,0 +1,8 @@
+<h3>Sign Up</h3>
+<%= form_tag ({controller: 'users', action: 'new', method: 'post'}) do %>
+	<input type="text" name="name" placeholder="Name">
+	<input type="text" name="email" placeholder="Email">
+	<input type="password" name="password" placeholder="Password:">
+  <input type="password" name="password_confirmation" placeholder="Confirmation">
+	<input type="submit" value="Continue">
+<% end %>
