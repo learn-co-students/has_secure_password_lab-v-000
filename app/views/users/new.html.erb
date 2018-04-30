@@ -1,8 +1,14 @@
 <h1>Sign Up</h1>
 
-<%= form_for(@user) do |f|%>
-  <p>Username: <%= f.text_field :name%></p>
-  <p>Password: <%= f.password_field :password%></p>
-  <p>Confirm Password: <%= f.password_field :password_confirmation%></p>
-  <%= f.submit%>
+<%= form_for @user, controller: 'users', action: 'create' do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit "create" %>
 <% end %>
