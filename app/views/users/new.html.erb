@@ -4,7 +4,7 @@
   <div><%= flash[:alert] %></div>
 <% end %>
 
-<%= form_for @user, url: signup_path do |f| %>
+<%= form_for @user, url: signup_path, method: :post do |f| %>
 Name: <%= f.text_field :name %>
 Password: <%= f.password_field :password %>
 Confirmation: <%= f.password_field :password_confirmation %>
