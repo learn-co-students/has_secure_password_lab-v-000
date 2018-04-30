@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   post 'signup', to: 'users#create'
 
-  resources :users, except: [:new, :create]
+  delete 'logout', to: 'sessions#destroy'
+
+  get 'home', to: 'users#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
