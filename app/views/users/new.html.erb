@@ -1,0 +1,19 @@
+<h3>Sign Up Form</h3>
+<div>
+  <%= form_tag signup_path do %>
+  
+    <%= label_tag "user_name", "Name" %><br/>
+    <%= text_field_tag "user[name]" %><br/>
+    
+    <%= label_tag "user_password", "Password" %><br/>
+    <%= password_field_tag "user[password]" %><br/>
+    
+    <%= label_tag "user_password_confirmation", "Confirm Password" %><br/>
+    <%= password_field_tag "user[password_confirmation]" %><br/>
+    
+    <%= submit_tag "Sign Up" %>
+  <% end %>
+</div>
+
+<h3>Link to Log In</h3>
+<div><%= link_to "Log In", login_path %></div>
