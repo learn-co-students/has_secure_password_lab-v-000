@@ -1,0 +1,9 @@
+<% if @user %>
+    <h1>Hi, <%= @user.name %></h1>
+    <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+      <input type=submit name="logout" value="Log Out">
+    <% end %>
+<% else %>
+    <h1>Welcome</h1>
+    <%= link_to "Log In", '/login' %>
+<% end %>

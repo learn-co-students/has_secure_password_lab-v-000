@@ -1,0 +1,12 @@
+<% if flash[:notice] %>
+    <h3><%= flash[:notice] %></h3>
+<% end %>
+
+<h1>Log In</h1>
+<%= form_for :user, url: '/login' do |f| %>
+    <%= f.label "Name" %>
+  <%= f.text_field :name %><br>
+  <%= f.label "Password" %>
+  <%= f.password_field :password %><br>
+  <%= submit_tag "Log In" %>
+<% end %>
