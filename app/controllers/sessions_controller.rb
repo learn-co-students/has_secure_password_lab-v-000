@@ -1,7 +1,5 @@
 class SessionsController < ApplicationController
 
-
-
   def create
     user = User.find_by(name: params[:user][:name])
     user = user.try(:authenticate, params[:user][:password])
@@ -15,4 +13,5 @@ class SessionsController < ApplicationController
     session.delete :user_id
     redirect_to '/'
   end
+  
 end

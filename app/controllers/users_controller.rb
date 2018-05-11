@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def new
   end
 
@@ -9,10 +10,12 @@ class UsersController < ApplicationController
     redirect_to controller: 'welcome', action: 'homepage'
   end
 
+  
   private
 
   def user_params
     params.require(:user).permit(:name,:password,:password_confirmation)
     
   end
+  
 end
