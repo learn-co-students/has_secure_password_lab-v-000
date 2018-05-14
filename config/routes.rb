@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  root 'users#new'
+  resources :users
+  resources :sessions
+  resources :welcome
+
+  get 'home' => 'welcome#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
