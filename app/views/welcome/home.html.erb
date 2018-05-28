@@ -1,0 +1,4 @@
+<h1>Hi, <%= @user.username %></h1>
+<%= form_tag "/logout", method: "post" do %>
+  <input type=submit value="logout">
+<% end %>
