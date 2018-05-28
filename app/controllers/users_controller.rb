@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
 
+  def new
+  end
+
   def create
-    user = User.new(user_params).save
+    user = User.new(users_params).save
   end
 
   private
