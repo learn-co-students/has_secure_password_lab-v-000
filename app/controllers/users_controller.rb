@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       current_user(@user)
-      redirect_to "/login"
+      redirect_to "/users/new"
     else
       redirect_to '/users/new'
     end
