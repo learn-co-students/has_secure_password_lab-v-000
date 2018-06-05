@@ -1,0 +1,13 @@
+<h1>Sign Up Form </h1>
+<%= form_tag users_path do %>
+<label> Username: </label>
+<%= text_field_tag :'username' %><br>
+
+<label> Password </label>
+<%= text_field_tag :'password' %><br>
+
+<label> Password </label>
+<%= text_field_tag :'password_confirmation' %><br>
+
+<%= submit_tag "Signup" %>
+<% end %>
