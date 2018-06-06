@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
-
+  get '/users' => 'users#new'
+  post '/users ' => 'users#create'
   get '/greeting' => 'sessions#greeting'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
-  def new
-    #signup form
-  end
-
   def create
-    #create a new user
+    user = User.new(user_params).save
   end
 
+  def new
+  end
 
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :password, :password_confirmation)
+  end
 end
