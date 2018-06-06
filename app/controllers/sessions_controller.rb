@@ -6,11 +6,11 @@ class SessionsController < ApplicationController
 
   def create
     #authenticate and login
-    @user = User.find_by(name: params[:name])
+    @user = User.find_by(name: params[:user][:name])
     #binding.pry
     return head(:forbidden) unless @user.authenticate(params[:password])
     session[:user_id] = @user.id
-    redirect_to greeting_path
+    redirect_to root_path
   end
 
 

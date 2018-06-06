@@ -1,13 +1,23 @@
 class UsersController < ApplicationController
+  # def create
+  #   if params[:password] == params[:password_confirmation]
+  #     user = User.new(user_params).save
+  #     session[:user_id] = @user.id
+  #     redirect_to greeting_path
+  #   else
+  #     redirect_to new_user_path
+  #   end
+  # end
+
   def create
-    if params[:password] == params[:password_confirmation]
-      user = User.new(user_params).save
-      session[:user_id] = @user.id
-      redirect_to greeting_path
-    else
-      redirect_to new_user_path
+        @user = User.new(user_params)
+            if @user.save
+                session[:user_id] = @user.id
+                redirect_to root_path
+            else
+                redirect_to new_user_path
+            end
     end
-  end
 
   def new
     @user = User.new
