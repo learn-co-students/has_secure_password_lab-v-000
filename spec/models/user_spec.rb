@@ -25,12 +25,14 @@ RSpec.describe User, type: :model do
      expect(user.valid?).to be true 
   end
 
-  it "is invalid if password and password_confirmation are both non-nil and don't match" do
-    user = User.new
-    user.password = 'foo'
-    user.password_confirmation = 'fo0'
-    expect(user.valid?).to be false
-  end
+  # it "is invalid if password and password_confirmation are both non-nil and don't match" do
+  #   user = User.new
+  #   user.password = 'foo'
+  #   user.password_confirmation = 'fo0'
+  #   expect(user.valid?).to be false
+  # end
+
+  
 
   describe 'authenticate' do
     it 'returns the user if credentials match' do
