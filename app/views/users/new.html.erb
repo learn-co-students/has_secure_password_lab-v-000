@@ -1,0 +1,15 @@
+<h2>Welcome! Please register!</h2>
+
+<%=form_for @user, url: {action: "create"} do |f| %>
+	<label>Username: </label>
+	<%=f.text_field :name %>
+	<label>Email: </label>
+	<%=f.text_field :email %>
+	<label>Password: </label>
+	<%=f.text_field :password %>
+	<label>Confirm Password: </label>
+	<%=f.text_field :password_confirmation %>
+	<%=f.submit "Register" %>
+
+<%end%>
+
