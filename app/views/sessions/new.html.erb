@@ -1,0 +1,10 @@
+Login Page
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post' do %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :password %>
+    <%= f.password :password %>
+    
+    <%= f.submit "login" %>
+<% end %>
