@@ -1,10 +1,9 @@
 class WelcomeController < ApplicationController
 
-
+  before_action :require_login
 
 
   def homepage
-    @user = User.find(session[:user_id])
   end
 
 end
