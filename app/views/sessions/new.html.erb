@@ -1,8 +1,6 @@
 <h2> Login Page</h2>
 
-
 <%= form_for @user, url: login_path, method: 'post' do |f| %>
-
 
  <%= f. label :name, placeholder: "name" %>
  <%= f.text_field :name %>
@@ -12,4 +10,4 @@
 
 Or Sign Up If Not Registered: <%= link_to "Sign Up", new_user_path %>
 
-	<%end%>
+<%end%>
