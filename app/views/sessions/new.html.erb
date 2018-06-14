@@ -1,16 +1,14 @@
 <h2> Login Page</h2>
 
 
-<%= form_for @user, url: login_path, method: 'post' do |f|%>
+<%= form_for @user, url: login_path, method: 'post' do |f| %>
 
 
- <%= f.label :name %>
+ <%= f. label :name, placeholder: "name" %>
  <%= f.text_field :name %>
-
- <%= f.label :password %>
+ <%= f.label :password, placeholder: "password" %>
  <%= f.text_field :password %>
-
- <%= f.submit "log in"%> <br><br>
+ <%= f. submit "log in" %> <br><br>
 
 Or Sign Up If Not Registered: <%= link_to "Sign Up", new_user_path %>
 

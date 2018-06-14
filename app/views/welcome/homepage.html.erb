@@ -1,12 +1,9 @@
 
-<h2> Hi, <%= @user.name %> </h2>
+<h2> Hi, <%= current_user.name %> </h2>
 
-  <%= form_for @user, url: logout_url, method: 'destroy' do |f| %>
-  <%= f.submit "Log Out" %>
-  <% end %>
 
-  <!-- alternative code: -->
-  <!-- <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
+
+  <%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
     <input type=submit value='logout'>
 
-    <% end %> -->
+    <% end %>
