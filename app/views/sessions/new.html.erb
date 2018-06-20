@@ -1,1 +1,15 @@
-<%# Where users log in %>
+<%= form_for :sessions, url: '/sessions' do |f| %>
+  Username: <%= f.text_field :name %>
+  Password: <%= f.password_field :password %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Submit" %>
+<% end %>
+<%# # app/controllers/users_controller.rb
+class UsersController < ApplicationController
+  def create
+    user = User.new(user_params).save
+  end  <label>Enter your name: </label>
+  <input name=name>
+  <input name=password>
+  <input type=submit value='login'>
+<% end %> %>
