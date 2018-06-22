@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+    root "sessions#new"
+    post "/create" => "sessions#create"
+    get "/signup" => "users#new"
+    post "/signup" => "users#create"
+    get "/home" => "users#home"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
