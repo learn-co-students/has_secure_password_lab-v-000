@@ -1,16 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe SessionsController, type: :controller do
-  
+
   before do
     User.destroy_all
   end
 
   let(:connie) {User.create(name: 'Connie', password: 'M4heswaran')}
-  
+
   describe 'post create' do
     it 'logs you in with the correct password' do
+      binding.pry
       post :create, user: {name: connie.name, password: connie.password}
+      binding.pry
       expect(session[:user_id]).to eq(connie.id)
     end
 
