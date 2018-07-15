@@ -4,13 +4,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    if params[:password] == params[:password_confirmation]
+    if params[:user][:password] == params[:user][:password_confirmation]
       @user = User.new(user_params).save
       @user = User.find_by(name: user_params[:name])
       session[:user_id] = @user.id
       render :show
     else
-      redirect_to '/new'
+      redirect_to '/users/new'
     end
   end
 

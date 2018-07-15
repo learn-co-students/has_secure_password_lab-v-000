@@ -1,20 +1,19 @@
 require 'pry'
 class SessionsController < ApplicationController
-  before_action :require_account
 
   def new
   end
 
   def create
-    binding.pry
-    session[:user_id] = @user.id
+    @user = User.find_by(name: params[:user][:name])
+    if @user.authenticate(params[:user][:password])
+      session[:user_id] = @user.id
+      redirect_to '/users/show'
+    else
+      redirect_to 'users/new'
+    end
   end
 
   private
-
-    def require_account
-      binding.pry
-      redirect_to '/users/new' unless params[:password]
-    end
 
 end
