@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    #this is the new action
   end
 
   def create
