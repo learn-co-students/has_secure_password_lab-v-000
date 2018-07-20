@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @user = User.create(name: params[:user][:name], password: params[:user][:password])
     #binding.pry
     if @user.authenticate(params[:user][:password_confirmation])
-      binding.pry
+      #binding.pry
       session[:user_id] = @user.id
       redirect_to users_index_path
     else
@@ -16,6 +16,6 @@ class UsersController < ApplicationController
 
   def index
   end
-  
+
 
 end
