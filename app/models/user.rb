@@ -2,6 +2,12 @@ class User < ActiveRecord::Base
   has_secure_password
 
   def valid?
-    !!password && !password_confirmation
+    if !!password == password_confirmation
+     return true
+   elsif !!password && !password_confirmation
+     return true
+   else
+    return false
+  end
   end
 end
