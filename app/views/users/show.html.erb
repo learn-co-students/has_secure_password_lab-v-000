@@ -1,0 +1,8 @@
+<h1>Welcome!</h1>
+
+
+
+
+<%= form_tag('/logout', method: :post) do %>
+    <p>Not <%= @user.name %>? <%= submit_tag 'Logout' %></p>
+<% end %>
