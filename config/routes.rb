@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :users
-  get '/signup' => "users#new"
-  post '/signup' => "users#create"
+  resources :users, only: [:new, :show, :create]
+  # get '/signup' => "users#new"
+  # post '/signup' => "users#create"
   get '/' => "users#welcome"
-  get '/login' => "session#new"
-  post '/login' => "session#create"
+  get '/login' => "sessions#new"
+  post '/login' => "sessions#create"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
