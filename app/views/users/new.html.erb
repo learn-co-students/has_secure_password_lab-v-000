@@ -1,0 +1,5 @@
+<%= form_for @user do |f| %>
+  <%= render partial: 'form', locals: {f: f} %>
+  <%= f.password_field :password_confirmation %>
+  <%= f.submit "Create Account" %>
+<% end %>
