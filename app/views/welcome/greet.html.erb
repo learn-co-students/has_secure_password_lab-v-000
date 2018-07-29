@@ -1,0 +1,8 @@
+<% if !logged_in? %>
+  <h1>Welcome</h1>
+  <p>Already have an account? <%= link_to "Log In", new_session_path %></p>
+  <p>Register : <%= link_to "Sign Up", new_user_path %></p>
+<% else %>
+  <h1>Hi, <%= current_user.name %></h1>
+  <p><%= link_to "Log Out", session_path(current_user), method: :delete %></p>
+<% end %>
