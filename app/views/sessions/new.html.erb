@@ -1,0 +1,10 @@
+<%= form_tag(login_path) do %>
+  <label>Name: </label>
+  <%= text_field_tag :name %><br />
+
+  <label>Password: </label>
+  <%= password_field_tag :password %><br /><br />
+
+  <%= submit_tag "Log In" %>
+  Or <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
+<% end %>
