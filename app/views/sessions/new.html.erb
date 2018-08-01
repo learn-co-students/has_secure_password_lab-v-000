@@ -1,0 +1,12 @@
+<h2>Please log in</h2>
+<%= form_for :user, controller: 'sessions', action: 'create' do |f| %>
+  Username: <%= f.text_field :name %>
+  Password: <%= f.password_field :password %>
+
+  <%= f.submit "Log in" %>
+<%end%>
+<br>
+or
+<br>
+<br>
+<a href="/signup">Sign up</a>
