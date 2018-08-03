@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post '/sessions' => "sessions#create" 
   get '/logout' => "sessions#destoy"
 
-  resources :users
+  resources :users, only: [:new, :create, :destroy]
   
   root 'users#new'
 end
