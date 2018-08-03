@@ -1,13 +1,19 @@
 class UsersController < ApplicationController
-  
-  
 
-  def create 
-    if session[:user_id].empty? || session[:user_id].nil?
-      redirect 
-    else 
-      @user = User.new(name: params[:name], password: params[:password])
-    end
+  def new 
+    @user = User.new 
+  end
+  
+  
+  def create
+    @user = User.create(user_params)
+    return redirect_to new_user_path unless @user.save
+    session[:user_id] = @user.id
+    redirect_to root_path
+  end
+  
+  def show 
+    @user = User.find(params[:id])
   end
   
   
@@ -16,7 +22,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :password, :password_confirmation)
   end
-  
   
   
 end
