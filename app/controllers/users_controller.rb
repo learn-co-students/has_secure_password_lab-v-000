@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+<<<<<<< HEAD
   
   def new 
     @user = User.new 
@@ -16,4 +17,6 @@ class UsersController < ApplicationController
     end
   end 
   
+=======
+>>>>>>> 4a583733d84c65747350c867da12230f977b30d0
 end
