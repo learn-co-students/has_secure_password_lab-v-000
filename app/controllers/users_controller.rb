@@ -5,19 +5,28 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new
-    @user.name = params[:user][:name]
-    @user.password = params[:user][:password]
-    @user.save
-    
-    render 'show'
+    if params[:user][:password] == params[:user][:password_confirmation]
+      @user = User.new
+      @user.name = params[:user][:name]
+      @user.password = params[:user][:password]
+      @user.save
+      session[:user_id] = @user.id
+
+      render 'show'
+    else
+
+      redirect_to new_user_path
+    end
   end
 
   def show
-    if logged_in?
-      render 'show'
-    else
-      redirect_to login_path
-    end
+
   end
+
+  # private
+  #
+  # def user_params
+  #   params.require(:user).permit(:username, :password, :password_confirmation)
+  # end
+
 end

@@ -17,7 +17,7 @@ User Login page
     -enter name
     -enter password
   -logged in if name & password valid
-    -redirect_to '/homepage'
+    -redirect_to root_path
 
 User Homepage
   >routes
