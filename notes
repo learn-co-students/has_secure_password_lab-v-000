@@ -1,0 +1,26 @@
+User Signup page
+  >routes
+    get '/users/new' => "users#new"
+    post '/users/new' => "users#create"
+  -form
+    -enter name
+    -enter password
+    -enter password confirmation (requires password_digest)
+  -create user
+  -redirect_to '/homepage'
+
+User Login page
+  >routes
+    get '/login' => "sessions#new"
+    post '/login' => "sessions#create"
+  -form
+    -enter name
+    -enter password
+  -logged in if name & password valid
+    -redirect_to root_path
+
+User Homepage
+  >routes
+  get '/homepage' => users#show
+  -Template
+    -"Hi, #{username}"
