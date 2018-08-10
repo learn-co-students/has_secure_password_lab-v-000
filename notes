@@ -21,6 +21,6 @@ User Login page
 
 User Homepage
   >routes
-  get '/homepage' => users#index
+  get '/homepage' => users#show
   -Template
     -"Hi, #{username}"
