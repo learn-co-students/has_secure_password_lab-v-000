@@ -1,0 +1,10 @@
+<h1> Login</h1>
+
+<%=form_tag({controller: 'sessions', action: "create", method: "post"}) do %>
+<%# because sessions is not an instance variable, we have to use form_tag %>
+<%= label_tag :name %>
+<%= text_field_tag :name %>
+<%= label_tag :password %>
+<%= password_field_tag :password%>
+<%= submit_tag %>
+<% end %>
