@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def homepage
+    render :new
+  end
+
   def create
     user = User.new(user_params).save
   end
