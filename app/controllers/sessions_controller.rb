@@ -4,8 +4,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if params[:name] && params[:name] != ''
-      user = User.find_by(name: params[:name])
+    if params[:user][:name] && params[:user][:name] != ''
+      user = User.find_by(name: params[:user][:name])
       if user.authenticate(params[:user][:password])
         session[:user_id] = user.id
         @user = user
@@ -20,8 +20,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    @user = User.find_by(name: params[:name])
-    session.delete :@user.id
+    session.delete :user_id
     redirect_to '/login'
   end
 
