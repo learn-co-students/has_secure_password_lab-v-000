@@ -18,10 +18,14 @@ Users should not be able to log in if they enter an incorrect password. Just red
 ## Instructions
 
 1. Create a User model and migrations.
+rails g model User name:string, password_digest:string --no-test-framework
 
 2. Create a Users controller. It should respond to `new` with the signup form, and respond to `create` by creating a new user.
+rails g controller users --no-test-framework
 
 3. Create a Sessions controller and the appropriate actions.
+rails g controller sessions --no-test-framework
+
 
 4. Create a user homepage. You can either create a controller for it (a `WelcomeController` is a reasonable thing that you'll see frequently), or you can make it an action in the User's controller.
 
