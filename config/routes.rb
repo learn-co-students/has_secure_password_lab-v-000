@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get '/users/new'
-  post '/users' => 'users#create'
+  resources :users, only: [:new,:create]
+  root to: 'users#home'
+  get '/login' => 'sessions#new'
   post '/sessions' =>'sessions#create'
 #   get '/login' => 'sessions#new'
 # post '/login' => 'sessions#create'
