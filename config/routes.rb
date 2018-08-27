@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  #:action=>"create", :controller=>"users"
+  resource :users, only: [:new, :show, :create]
+  resource :sessions, only: [:new, :show, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
