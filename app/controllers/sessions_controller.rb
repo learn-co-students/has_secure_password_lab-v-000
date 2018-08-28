@@ -1,8 +1,10 @@
 class SessionsController < ApplicationController
 
-  def post
-    @user = User.find_by(username: params[:username])
-    return head(:forbidden) unless @user.authenticate(params[:password])
+  def create
+    @user = User.find_by(name: params[:user][:name])
+
+    return head(:forbidden) unless @user.authenticate(params[:user][:password])
     session[:user_id] = @user.id
+    redirect_to "/"
   end
 end

@@ -6,9 +6,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    if @user.password == @user.password_confirmation && @user.save
+    if @user.save
       session[:user_id] = @user.id
-      render :show
+      redirect_to "/user/show"
     else
       redirect_to "/users/new"
     end
