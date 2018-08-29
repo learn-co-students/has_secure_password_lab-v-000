@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
 
   def create #login action
     user = User.find_by(name: params[:user][:name])
-    binding.pry
-    if user && user.authenticate(params[:password])
-      session[:user_id] = @user.id
+    # binding.pry
+    if user && user.authenticate(params[:user][:password])
+      session[:user_id] = user.id
       redirect_to '/homepage'
     else
       redirect_to '/login'
