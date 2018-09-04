@@ -14,4 +14,12 @@ class User < ActiveRecord::Base
     end
   end
 
+  def authenticate(password_confirmation)
+    if self.password == password_confirmation
+      self
+    else
+      false
+    end 
+  end
+
 end
