@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 
+<<<<<<< HEAD
   def new
   end
 
@@ -10,4 +11,6 @@ class UsersController < ApplicationController
     redirect_to controller: 'welcome', action: 'home'
   end
 
+=======
+>>>>>>> 283ac149c302bf5f249ba2e73a55cbfdb1dcc97d
 end
