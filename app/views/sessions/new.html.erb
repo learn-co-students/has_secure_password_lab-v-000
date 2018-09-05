@@ -1,0 +1,6 @@
+<%= form_tag(sessions_path) do %>
+    <%= text_field_tag :username, '', :class => "user", :placeholder => "Username" %>
+    <%= text_field_tag :name, '', :class => "user", :placeholder => "Name" %>
+    <%= password_field_tag :password, '', :class => "user", :placeholder => "Password" %>
+    <%= submit_tag "Login " %>
+<% end %>
