@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
-<<<<<<< HEAD
+
   def new
+    @user = User.new
   end
 
   def create
@@ -11,6 +12,11 @@ class UsersController < ApplicationController
     redirect_to controller: 'welcome', action: 'home'
   end
 
-=======
->>>>>>> 283ac149c302bf5f249ba2e73a55cbfdb1dcc97d
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :password, :password_confirmation)
+  end
+
+
 end
