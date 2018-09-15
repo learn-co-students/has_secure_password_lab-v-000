@@ -1,0 +1,12 @@
+
+<h3> Please login!</h3>
+
+<%= form_tag(login_path) do %>
+   <%= label_tag :name %>
+   <%= text_field_tag "user[name]" %>
+   <%= label_tag :password %>
+   <%= password_field_tag "user[password]" %>
+   <%= submit_tag "log in" %>
+<% end %>
+
+<%= link_to "Singup", new_user_path %>
