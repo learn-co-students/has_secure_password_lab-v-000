@@ -4,17 +4,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def welcome
-
+    login?
   end
 
   private
+
   def login?
     if session.include?(:user_id)
       render "/"
     else
-      binding.pry
-      flash[:messeage] = "You Need to login before proceding"
-      redirect_to(controller: 'users', action: 'new')
+      render "sessions/login"
     end
   end
 
