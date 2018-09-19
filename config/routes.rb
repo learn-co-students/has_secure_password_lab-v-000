@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
 
-  get '/show' => 'welcome/show'
+  get '/show' => 'welcome#show'
   root 'sessions#new'
-
-
 end

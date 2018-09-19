@@ -1,10 +1,6 @@
 class WelcomeController < ApplicationController
   def show
-    if logged_in?
-      render 'show'
-    else
-      redirect_to 'users/new'
-    end
+    @user = User.find(session[:user_id])
   end
-  
+
 end
