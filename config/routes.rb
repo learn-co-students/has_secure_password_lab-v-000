@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
-  get '/register', to: 'users#new'
-  post '/register', to: 'users#create'
-
-
+resource :users, only: [:new, :create]
+resource :sessions, only: [:create]
+resource :welcome, only: [:index]
 
 end
