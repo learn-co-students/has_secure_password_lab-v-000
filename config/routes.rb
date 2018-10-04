@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
 resource :users, only: [:new, :create]
-resource :sessions, only: [:create]
-resource :welcome, only: [:index]
+
+get '/login', to: 'sessions#new'
+post '/login', to: 'sessions#create'
+post '/logout', to: 'sessions#destroy'
+
+get '/welcome', to: 'welcome#index'
 
 end
