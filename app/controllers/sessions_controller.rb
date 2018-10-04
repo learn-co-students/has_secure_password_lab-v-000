@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    params.inspect
   end
 
   def create
