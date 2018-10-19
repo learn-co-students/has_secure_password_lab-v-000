@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    
+    attr_accessor :name
 
     def new
         # It should respond to new with the signup form,
