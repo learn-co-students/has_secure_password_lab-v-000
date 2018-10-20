@@ -7,15 +7,24 @@ class UsersController < ApplicationController
 
    
     def create
-        binding.pry
         # create by creating a new user.
-        User.create(user_params)
+        
+       @user =  User.create(user_params)
+ 
+       if @user.save
+        
+    #    alternavtive    user_params[:password] == user_params[:password_confirmation]
+    #         @user= User.find_by(name: user_params[:name])
+        session[:user_id] = @user.id
+        redirect_to root_path
+       else
+        redirect_to new_users_path
+
+       end
+
 
     end  
 
-    def signup
-
-    end
 
 
     private
