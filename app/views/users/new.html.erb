@@ -1,0 +1,12 @@
+<h1>Please Sign Up</h1>
+
+<%=form_tag({controller: "users", action:"create", method:"post"}) do %>
+Username:
+<input name= 'user[name]'><br>
+Password:
+<input name= 'user[password]'><br>
+Password Confirmation:
+<input name= 'user[password_confirmation]'.<br>
+
+<input type='submit' value="Signup">
+<%end%>
