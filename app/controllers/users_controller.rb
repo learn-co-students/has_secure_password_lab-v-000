@@ -10,8 +10,15 @@ class UsersController < ApplicationController
     #binding.pry
     @user = User.create(user_params)
     @user.save
-    @user.authenticate(params[:user][:password])
-    redirect_to users_path
+
+    if @user.save
+      @user.authenticate(params[:user][:password])
+      session[:user_id] = @user.id
+      redirect_to users_path
+    else
+      redirect_to "/"
+    end
+
   end
 
 
