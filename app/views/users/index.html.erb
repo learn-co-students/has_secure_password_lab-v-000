@@ -1,0 +1,11 @@
+<h1>Please Sign In To Continue</h1>
+
+<%= form_tag ('/login') do %>
+<p><%= label_tag "Your Name:" %></p>
+<p><%= text_field_tag 'name' %></p>
+<p><%= label_tag 'Password:' %></p>
+<p><%= password_field_tag 'password' %></p>
+<p><%= submit_tag "Log In" %></p>
+<% end %>
+
+<h2>Not a member?, Please <%= link_to "sign up", '/signup' %></h2>
