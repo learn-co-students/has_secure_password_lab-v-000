@@ -1,11 +1,14 @@
 <h1>Sign Up Page</h1>
 
-<%= form_tag ('/signup') do %>
-<p><%= label_tag "Your Name:" %></p>
-<p><%= text_field_tag 'name' %></p>
-<p><%= label_tag 'Password:' %></p>
-<p><%= password_field_tag 'password' %></p>
-<p><%= label_tag "Confirmation Password:" %></p>
-<p><%= password_field_tag 'password_confirmation' %></p>
-<p><%= submit_tag "Sign Up" %></p>
+<%= form_for @user, url: '/signup' do |f| %>
+  <p><%= f.label :name %></p>
+  <p><%= f.text_field :name %></p>
+
+  <p><%= f.label :password %></p>
+  <p><%= f.password_field :password %></p>
+
+  <p><%= f.label :password_confirmation %></p>
+  <p><%= f.password_field :password_confirmation %></p>
+
+  <p><%= f.submit "Sign Up" %></p>
 <% end %>
