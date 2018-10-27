@@ -1,0 +1,14 @@
+<h1>Please Sign In To Continue</h1>
+
+<%= form_for @user, url: '/login' do |f| %>
+  <p><%= f.label :name %></p>
+  <p><%= f.text_field :name %></p>
+
+  <p><%= f.label :password %></p>
+  <p><%= f.password_field :password %></p>
+
+  <p><%= f.submit "Log In" %></p>
+<% end %>
+
+
+<h2>Not a member?, Please <%= link_to "sign up", '/signup' %></h2>
