@@ -1,0 +1,14 @@
+<h1>Welcome to new sessions</h1>
+
+<%#= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+<%= form_for @user, url: '/sessions' do |f| %>
+  <%= label_tag(:name, "Username:") %>
+  <%= text_field_tag(:name) %>
+
+  <%= label_tag(:password, "Password:") %>
+  <%= password_field_tag(:password) %>
+  <input type=submit value='login'>
+<% end %>
+
+<%= link_to "Signup", signup_path %>
+<%#link_to "Signup", controller: "users", action: "new" %>
