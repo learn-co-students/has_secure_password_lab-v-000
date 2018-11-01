@@ -1,5 +1,5 @@
-<%= form_for :user, url: '/users' do |f| %>
-  Username: <%= f.text_field :username %>
+<%= form_for @user, controller: 'users', action: 'create' do |f| %>
+  Name: <%= f.text_field :name %>
   Password: <%= f.password_field :password %>
   Password Confirmation: <%= f.password_field :password_confirmation %>
   <%= f.submit "Submit" %>
