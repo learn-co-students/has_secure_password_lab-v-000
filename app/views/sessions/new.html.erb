@@ -1,0 +1,9 @@
+<h1>Log In</h1>
+
+<%= form_tag('/sessions') do %>
+  <%= label_tag 'Name:' %>
+  <%= text_field_tag 'name' %></br>
+  <%= label_tag 'Password:' %>
+  <%= text_field_tag 'password' %></br>
+  <%= submit_tag %>
+<% end %>
