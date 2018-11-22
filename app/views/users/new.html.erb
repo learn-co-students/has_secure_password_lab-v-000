@@ -1,0 +1,14 @@
+<h1>Sign-up</h1>
+
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
+<%= form_tag ('/signup') do %>
+  <div class="">
+    <%= text_field_tag 'user[name]', nil, placeholder: 'Username'%>
+    <%= text_field_tag 'user[password]', nil, placeholder: 'Password' %>
+    <%= text_field_tag 'user[password_confirmation]', nil, placeholder: 'Confirm Password' %>
+
+    <%= submit_tag 'Signup' %>
+  </div>
+<% end %>
