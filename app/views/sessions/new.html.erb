@@ -1,0 +1,7 @@
+<h1>Login</h1>
+
+<%= form_tag(login_path) do%>
+    <%= text_field_tag :"user[name]", nil, placeholder: "Name" %>
+    <%= password_field_tag :"user[password]", nil, placeholder: "Password" %>
+    <%= submit_tag :Login %>
+<%end%>
