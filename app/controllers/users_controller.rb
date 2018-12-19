@@ -6,14 +6,15 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to login_path
+      session[:user_id] = @user.id
+      redirect_to :welcome
     else
       redirect_to :signup
     end
   end
 
   def welcome
-    @user = User.find(params[:name])
+
   end
 
   private
