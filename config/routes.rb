@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
+  post '/signup' => 'users#create'
   get '/welcome' => 'users#welcome'
+
+  root 'application#hello'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
 
   resources :users
 
