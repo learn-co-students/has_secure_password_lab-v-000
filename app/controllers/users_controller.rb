@@ -5,12 +5,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    if user_params && !user_params.blank?
+    if !user_params[:name].blank? && user_params[:password] == user_params[:password_confirmation]
       @user = User.create(user_params)
-      session[:id] = @user.id
+      session[:user_id] = @user.id
       redirect_to user_path(@user)
-      
+
     else
+      flash[:alert] = "Please fill all fields"
       redirect_to new_user_path
     end
   end
