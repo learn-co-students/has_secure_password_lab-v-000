@@ -1,0 +1,9 @@
+<%= form_tag(controller: "users", action: "create", method: "post") do %>
+<label>User name:</label><br>
+<%= text_field_tag (:name) %><br>
+<label>Password:</label><br>
+<%= text_field_tag (:password) %><br>
+<lable>Password Confirm: </lable><br>
+<%= text_field_tag (:password_confirmation) %><br>
+<%= submit_tag "Submit" %>
+<%end%>
