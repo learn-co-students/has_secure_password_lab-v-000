@@ -1,0 +1,16 @@
+<section class="todoapp">
+  <header class="header">
+    <h1>Login</h1>
+
+    <%= form_tag(sessions_path) do %>
+
+      <%= text_field_tag :name, '',  placeholder: "enter Name" %>
+      <%= text_field_tag :password, '',  placeholder: "password" %>
+      <%= submit_tag %>
+
+    <% end %>
+
+</header>
+
+<footer class="footer"></footer>
+</section>
