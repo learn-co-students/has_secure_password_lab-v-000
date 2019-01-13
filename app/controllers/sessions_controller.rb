@@ -1,0 +1,22 @@
+class SessionsController < ApplicationController
+
+  def new
+  end
+
+  def create
+    #raise params.inspect
+    @user = User.find_by(name: params[:user][:name])
+    @user = @user.try(:authenticate, params[:user][:password])
+    if @user
+      session[:user_id] = @user.id
+      redirect_to root_path
+    else
+      redirect_to '/login'
+    end
+  end
+
+  def destroy
+    reset_session
+    redirect_to login_path
+  end
+end
