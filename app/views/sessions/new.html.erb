@@ -1,0 +1,20 @@
+<h1> User Login </h1>
+
+<% if errors?(@user)%>
+  <ul>
+  <% @user.errors.full_messages.each do |msg| %>
+    <li> <%= msg %> </li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_tag(sessions_path, mehtod: :post) do %>
+  <%= text_field_tag 'user[name]', nil, placeholder: 'username' %>
+  <%= password_field_tag 'user[password]', nil, placeholder: 'password' %>
+  <%= password_field_tag 'user[password_confirmation]', nil, placeholder: 'confirm password'%>
+  <%= submit_tag 'login' %>
+<% end %>
+
+
+<br>
+<h5> If you do not have an account, signup <%=link_to "HERE", signup_path %> </h5>
