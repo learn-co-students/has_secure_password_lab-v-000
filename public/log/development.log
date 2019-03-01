@@ -1,0 +1,1 @@
+DEPRECATION WARNING: ActiveRecord::Base.raise_in_transactional_callbacks= is deprecated, has no effect and will be removed without replacement. (called from <top (required)> at /home/jjeanius/has_secure_password_lab-v-000/config/environment.rb:5)
