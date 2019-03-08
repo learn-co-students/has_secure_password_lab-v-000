@@ -1,2 +1,6 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<%= form_for @user, url: login_path, method: :post do |f| %>
+  Name: <%= f.text_field :name %><br /><br />
+  Password: <%= f.password_field :password %><br /><br />
+
+  <%= f.submit 'Log In' %> or <%= link_to(controller: 'users', action: 'new') {'Sign Up'} %>
+<% end %>
