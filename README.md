@@ -1,4 +1,4 @@
-# has_secure_password
+ gem install bundler -v 1.16.1 # has_secure_password
 
 ## Objectives
 
