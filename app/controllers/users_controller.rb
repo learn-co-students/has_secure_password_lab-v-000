@@ -5,7 +5,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    User.create(user_params)
+    if params[:password] == params[:password_confirmation]
+      User.create(user_params)
+    else 
+      redirect_to(controller: 'users', action: 'new')
+    end
   end
 
   def homepage
