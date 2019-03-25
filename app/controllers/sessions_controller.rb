@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
    return redirect_to(controller: 'sessions', action: 'new') unless @user.authenticate(params[:user][:password])
    session[:user_id] = @user.id
 
-   redirect_to(controller: 'users', action: 'homepage')
+   render 'users/homepage'
  end
 
    def destroy
