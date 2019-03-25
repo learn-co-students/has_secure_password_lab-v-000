@@ -6,3 +6,5 @@
   Password Confirmation: <%= f.password_field :password_confirmation %>
   <%= f.submit "Sign Up" %>
 <% end %>
+
+<p> Or <%= link_to "click here", controller: "sessions", action: "new" %> to login with an existing account. </p>

@@ -15,7 +15,8 @@ class UsersController < ApplicationController
   end
 
   def homepage
-  
+    redirect_to(controller: 'users', action: 'new') unless current_user
+      
   end
 
   private
