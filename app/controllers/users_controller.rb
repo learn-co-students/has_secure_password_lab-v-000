@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       @user = User.create(user_params)
       session[:user_id] = @user.id
       render :homepage
-    else 
+    else
       redirect_to(controller: 'users', action: 'new')
     end
   end
