@@ -1,10 +1,8 @@
 <h1> New User Form </h1>
-<%= form_for @user  do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br />
-  <%= f.label :password %>
-  <%= f.password_field :password %>
 
-  <%= f.submit %>
+<%= form_for @user, url: '/users' do |f| %>
+  Name: <%= f.text_field :name %>
+  Password: <%= f.password_field :password %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Submit" %>
 <% end %>
