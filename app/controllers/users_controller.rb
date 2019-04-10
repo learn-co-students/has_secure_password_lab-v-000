@@ -1,17 +1,15 @@
 class UsersController < ApplicationController
+  before_action :require_logged_in
+  skip_before_action :require_logged_in, only: [:new, :create]
+
   def new
-    @user = User.new
   end
 
   def create
-    if params[:password] != params[:password_confirmation]
-      redirect_to '/login'
-    else
-      @user = User.new(user_params)
-      @user.save
-      session[:user_id] = @user.id
-      redirect_to '/signup'
-    end
+    @user = User.create(user_params)
+    return redirect_to controller: 'users', action: 'new' unless @user.save
+    session[:user_id] = @user.id
+    redirect_to controller: 'users', action: 'show'
   end
 
   def show

@@ -3,10 +3,12 @@ Rails.application.routes.draw do
 
   post '/login' => 'sessions#create'
 
-  post '/login' => 'users#create'
+  post '/logout' => 'sessions#destroy'
 
-  get '/signup' => 'users#new'
-  # root 'users#new'
+
+  resources :users, only: [:new, :create]
+
+  root 'users#show'
 
 
 
