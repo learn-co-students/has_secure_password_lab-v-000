@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe "sessions/new.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "displays login link if user not logged in" do 
+    if session[:name] = nil 
+     expect(page).to have_content 'login'
+    end
+  end
 end

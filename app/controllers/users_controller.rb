@@ -6,11 +6,12 @@ class UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
-        if @user.save
+        if @user.password == @user.password_confirmation
+            @user.save 
             session[:user_id] = @user.id
             render :show
         else
-            redirect_to :new_user_url
+            redirect_to new_user_url
         end
     end
 
