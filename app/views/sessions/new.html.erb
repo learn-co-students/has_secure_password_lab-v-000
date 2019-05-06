@@ -1,0 +1,9 @@
+<h1>Sign Up or Login /h1>
+
+<%= form_for @user |f| %>
+Username: <%= f.text_field :name %>
+Password: <%= f.password_field :password %>
+<%= f.submit "Login" %>
+<% end %>
+
+<a href='/users/new'>Sign Up</a>
