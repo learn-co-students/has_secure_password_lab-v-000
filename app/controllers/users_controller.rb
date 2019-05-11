@@ -4,8 +4,13 @@ class UsersController < ApplicationController
     end
 
     def create
-        User.create(user_params)
-        redirect_to '/login'
+        if user_params[:password] != user_params[:password_confirmation]
+            redirect_to '/signup'
+        else
+            @user = User.create(user_params)
+            session[:user_id] = @user.id
+            redirect_to '/login'
+        end
     end
 
     private
