@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  def index
-    
+  def home
+    @user = User.find_by(name: params[:name])
   end
 end
