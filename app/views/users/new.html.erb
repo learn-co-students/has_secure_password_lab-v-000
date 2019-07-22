@@ -2,6 +2,6 @@
 <p>Please fill out the following form to sign up:</p>
 <%= form_for(@user) do |f| %>
 <%= f.text_field :name, :placeholder => "Your name here" %><br><br>
-<%= f.text_field :username, :placeholder => "Your username here" %><br><br>
 <%= f.text_field :password, :placeholder => "Your password here" %><br><br>
+<%= f.submit %>
 <% end %>
