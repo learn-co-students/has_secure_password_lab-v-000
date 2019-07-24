@@ -1,5 +1,3 @@
-class User < ApplicationRecord
-validates :name, :presence =>  true
-validates :password, :presence => true, :confirmation => true
+class User < ActiveRecord::Base
 has_secure_password
 end
