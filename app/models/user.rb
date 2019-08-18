@@ -3,7 +3,11 @@ class User < ApplicationRecord
     validate :password_and_password_confirmation
 
     def authenticate(password)
-        # matches password param from session#new against found user.password
+        if password == self.password
+            return self
+        else
+            return nil
+        end
     end
 
     def password_and_password_confirmation
