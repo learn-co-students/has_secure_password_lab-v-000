@@ -1,9 +1,5 @@
-<form action="/login" method="post">
-<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-<label for="">Name:</label>
-<input type="text" id="name" name="name"><br>
-<label for="">Password:</label>
-<input type="text" id="password" name="password"><br>
-<input type="submit" value="login">
-
-</form>
+<%= form_for :user, url: '/login' do |f| %>
+  Username: <%= f.text_field :name %><br>
+  Password: <%= f.password_field :password %><br>
+  <%= f.submit "Submit" %>
+<% end %>
