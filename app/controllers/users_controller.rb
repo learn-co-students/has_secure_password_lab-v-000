@@ -6,12 +6,20 @@ class UsersController < ApplicationController
 
   def create
     @user = User.find_by(name: params[:name])
-    if @user && @user.password == params[:password]
-      session[:user_id] = @user.id
-      user_path(@user)
-    else
+    if @user
+      flash[:notice] = "User already exists."
       redirect_to new_session_path
+    elsif !@user && User.new(user_params).valid?
+      new_user = User.create(user_params)
+      session[:user_id] = new_user.id
+      redirect_to homepage_path
+    else
+      redirect_to new_user_path
     end
+  end
+
+  def show
+
   end
 
   private
