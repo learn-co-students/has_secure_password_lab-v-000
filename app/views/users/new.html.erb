@@ -1,8 +1,12 @@
+<!-- auto generated from running migrations -->
 <h1>Users#new</h1>
 <p>Find me in app/views/users/new.html.erb</p>
+<!-- https://learn.co/tracks/full-stack-web-development-v8/module-13-rails/section-12-authentication/using-has_secure-password-lab -->
+<!-- new code start -->
 <%= form_for :user, url: '/users/create' do |f| %>
   Username: <%= f.text_field :name %>
   Password: <%= f.password_field :password %>
   Password Confirmation: <%= f.password_field :password_confirmation %>
   <%= f.submit "Submit" %>
 <% end %>
+<!-- new code end -->
