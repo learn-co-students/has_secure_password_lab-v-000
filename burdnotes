@@ -1,0 +1,79 @@
+https://learn.co/tracks/full-stack-web-development-v8/module-13-rails/section-12-authentication/using-has_secure-password-lab
+
+INSTRUCTIONS (I) & ACTIONS (A)
+
+I.1.) Create a User model and migrations.
+
+A.a.) $ touch ./app/models/user.rb
+      1.) has_secure_password
+
+A.b.) $ rails g migration CreateUsers name:string password_digest:string --no-test-framework
+      1.) $ rails db:migrate
+-----
+
+I.2.) Create a Users controller. It should respond to new with the signup form,
+      and respond to create by creating a new user.
+
+A.a.) $ rails g controller users new create --no-test-framework
+      1.) get '/login' => 'sessions#new'
+      2.) user_params
+
+A.b.)
+-----
+
+I.3.) Create a Sessions controller and the appropriate actions.
+
+A.a.) $ rails g controller sessions new create destroy --no-test-framework
+
+-----
+
+I.4.) Create a user homepage. You can either create a controller for it
+      (a WelcomeController is a reasonable thing that you'll see frequently),
+      or you can make it an action in the User's controller.
+
+A.a.) $ rails g controller welcome --no-test-framework
+
+
+
+NOTES:
+
+1.) Upon running the following migration:
+    rails g controller users new create --no-test-framework
+    ... I have the following results:
+     create  app/controllers/users_controller.rb
+      route  get 'users/create'
+      route  get 'users/new'
+     invoke  erb
+     create    app/views/users
+     create    app/views/users/new.html.erb
+     create    app/views/users/create.html.erb
+     invoke  helper
+     create    app/helpers/users_helper.rb
+     invoke  assets
+     invoke    coffee
+     create      app/assets/javascripts/users.coffee
+     invoke    scss
+     create      app/assets/stylesheets/users.scss
+    ...I may need to delete some of this crap
+
+
+2.) Upon running the following migration:
+    rails g controller sessions new create destroy --no-test-framework
+    ... I have the following results:
+     create  app/controllers/sessions_controller.rb
+      route  get 'sessions/destroy'
+      route  get 'sessions/create'
+      route  get 'sessions/new'
+     invoke  erb
+     create    app/views/sessions
+     create    app/views/sessions/new.html.erb
+     create    app/views/sessions/create.html.erb
+     create    app/views/sessions/destroy.html.erb
+     invoke  helper
+     create    app/helpers/sessions_helper.rb
+     invoke  assets
+     invoke    coffee
+     create      app/assets/javascripts/sessions.coffee
+     invoke    scss
+     create      app/assets/stylesheets/sessions.scss
+    ...I may need to delete some of this crap
