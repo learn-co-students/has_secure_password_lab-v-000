@@ -1,0 +1,11 @@
+<!-- auto generated from running migrations -->
+<h1>Sessions#new</h1>
+<p>Find me in app/views/sessions/new.html.erb</p>
+<!-- https://learn.co/tracks/full-stack-web-development-v8/module-13-rails/section-12-authentication/using-has_secure-password-lab -->
+<!-- new code start -->
+<%= form_for :sessions, url: '/sessions/create' do |f| %>
+  Username: <%= f.text_field :username %>
+  Password: <%= f.password_field :password %>
+<%= f.submit "Submit" %>
+<% end %>
+<!-- new code end -->
