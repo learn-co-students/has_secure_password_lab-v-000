@@ -1,0 +1,6 @@
+<%= form_for @user do |f| %>
+Username: <%= f.text_field :name %>
+Password:  <%= f.password_field :password %>
+Password Conformation <%= f.password_field :password_conformation %>
+<%= f.submit %>
+<% end %>
