@@ -5,17 +5,20 @@ class SessionsController < ApplicationController
   end
   
   def create
-    @user = User.find_by_name(params[:user][:name])
+    user = User.find_by_name(params[:user][:name])
 
-    if @user.try(:authenticate, params[:user][:password])
-      raise @user.inspect
+    if user.try(:authenticate, params[:user][:password])
+      session[:user_id] = user.id
+      redirect_to home_path # users#home
     else
-      raise "Not a valid user."
+      flash.alert = "The name and/or password is incorrect."
+      redirect_to login_path
     end
   end
 
   def destroy
-    # For the fun of it, make a flash message here that tells users when they've successfully logged out.
-    # I will need to display it in the application.html.erb file if I do this.
+    session.delete :user_id
+    flash.alert = "You have successfully logged out!"
+    redirect_to login_path
   end
 end

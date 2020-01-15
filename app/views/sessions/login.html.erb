@@ -6,6 +6,10 @@
   <%# end %>
 -->
 
+<% if flash.alert %>
+  <p><%= flash.alert %></p>
+<% end %>
+
 <%= form_for @user, url: login_path do |f| %>
   <p>
     <%= f.label :name %>

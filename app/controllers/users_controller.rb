@@ -29,6 +29,10 @@ class UsersController < ApplicationController
   end
 
   def home
+    unless current_user
+      flash.alert = "You are not allowed to access that page."
+      redirect_to login_path
+    end
   end
 
   private
