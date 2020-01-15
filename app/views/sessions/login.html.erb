@@ -1,0 +1,23 @@
+<h1>Returning users, please log in here.</h1>
+
+<!-- This is from when I defined current_user in the SessionsController by mistake.
+  <%# if !current_user %>
+    <p>I can access the current_user on this page.</p>
+  <%# end %>
+-->
+
+<% if flash.alert %>
+  <p><%= flash.alert %></p>
+<% end %>
+
+<%= form_for @user, url: login_path do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </p>
+  <%= f.submit "Log In" %>
+<% end %>

@@ -1,0 +1,38 @@
+<h1>Please sign up here to create an account.</h1>
+
+<% if flash[:errors] %>
+  Errors:
+  <ul>
+    <% flash[:errors].each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<!-- This can probably be refactored with a partial, along with the sessions/new.html.erb file. -->
+<%= form_for @user, url: signup_path do |f| %> 
+  <!-- It might be better (by convention) to have this form post to '/users', not '/signup' -->
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :password %>
+    <%#= @user.errors[:password].first %> 
+    <!-- I can adjust this later, but it works! (Update: Only if re-rendering the page) -->
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label :password_confirmation %>
+    <%#= @user.errors[:password_confirmation].first %> 
+    <%= f.password_field :password_confirmation %>
+
+    <%#= "Password confirmation #{@user.errors[:password_confirmation].first}" %> 
+    <!-- If I put the message here, then it ALWAYS shows "Password confirmation..." -->
+    <!-- It's better to move the logic into the User model. -->
+
+    <!-- To make the password_confirmation required: -->
+    <%#= f.password_field :password_confirmation, nil, required: true %>
+  </p>
+  <%= f.submit "Sign Up" %>
+<% end %>
