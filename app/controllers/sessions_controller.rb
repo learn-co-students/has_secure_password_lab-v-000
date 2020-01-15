@@ -1,8 +1,17 @@
 class SessionsController < ApplicationController
-  def new
+  def login
+    @user = User.new # I wonder about this, since I'm calling the User model.
+    # Maybe this belongs in the UsersController.
   end
   
   def create
+    @user = User.find_by_name(params[:user][:name])
+
+    if @user.try(:authenticate, params[:user][:password])
+      raise @user.inspect
+    else
+      raise "Not a valid user."
+    end
   end
 
   def destroy
