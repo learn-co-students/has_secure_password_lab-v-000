@@ -3,17 +3,12 @@ class UsersController < ApplicationController
     @user = User.new
   end
   def create
-    @user = User.find_by(name: params[:user][:name])
-    if @user.nil?
-      @user = User.new(user_params)
-      if @user.save
-        session[:user_id]=@user.id
-        redirect_to welcome_home_path
-      else
-        redirect_to signup_path
-      end
+    @user = User.new(user_params)
+    if @user.save
+      session[:user_id]=@user.id
+      redirect_to welcome_home_path
     else
-      redirect_to login_path, alert:"Users already exists, please enter pwd"
+      redirect_to signup_path
     end
 
   end
