@@ -5,12 +5,19 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if @user && @user.authenticate(params[:user][:password])
-      session[:user_id]=@user.id
-      redirect_to welcome_home_path
+    @user= User.find_by(name: params[:user][:name])
+    if @user.nil?
+      redirect_to login_path, alert:"Users doe not exists, please try again or signup"
     else
-      redirect_to login_path, alert: "Please, try it again"
+      if @user && @user.authenticate(params[:user][:password])
+        session[:user_id]=@user.id
+        redirect_to welcome_home_path
+      else
+        redirect_to login_path, alert: "Wrong pwd. Please, try again"
+      end
+
     end
+
   end
 
   def logout
