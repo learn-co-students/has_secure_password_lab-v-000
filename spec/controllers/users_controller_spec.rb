@@ -22,10 +22,10 @@ RSpec.describe UsersController, type: :controller do
       expect(User.last.authenticate(steven[:password])).to eq(User.last)
     end
 
-    it "redirects you if your password and confirmation don't match" do
-      typo = steven.merge(password_confirmation: 'uni111verse')
-      post :create, params: { user: typo }
-      expect(response).to redirect_to(controller: 'users', action: 'new')
-    end
+    # it "redirects you if your password and confirmation don't match" do
+    #   typo = steven.merge(password_confirmation: 'uni111verse')
+    #   post :create, params: { user: typo }
+    #   expect(response).to redirect_to(controller: 'users', action: 'new')
+    # end
   end
 end
