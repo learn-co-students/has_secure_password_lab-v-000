@@ -1,14 +1,9 @@
 class UsersController < ApplicationController
-  def new
-  end
 
   def create
     User.create(user_params)
   end
-
-  def welcome
-  end
-
+  
   private
 
   def user_params
