@@ -3,8 +3,9 @@
 <% if flash[:alert] %>
     <div class="alert"><%= flash[:alert] %></div>
   <% end %>
+  <br>
 
-<%= form_for @user, url: signup_path, method: :post do |f| %>
+<%= form_for @user do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %><br>
 

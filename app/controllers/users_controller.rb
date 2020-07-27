@@ -11,7 +11,7 @@ class UsersController < ApplicationController
             redirect_to '/welcome'
         else
             flash[:alert] = "Please make sure your passwords match."
-            redirect_to signup_path
+            redirect_to new_user_path
         end
     end
 

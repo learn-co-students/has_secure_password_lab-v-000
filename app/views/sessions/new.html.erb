@@ -4,7 +4,7 @@
     <div class="alert"><%= flash[:alert] %></div>
   <% end %>
 <br>
-<%= form_for @user, url: login_path, method: :post do |f| %>
+<%= form_for @user, url: sessions_path, method: :post do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %><br>
 
@@ -12,5 +12,5 @@
     <%= f.password_field :password %><br>
 
     <%= f.submit "Log In" %>
-    or <%= link_to "Create an account", signup_path %>
+    or <%= link_to "Create an account", new_user_path %>
 <% end %>
