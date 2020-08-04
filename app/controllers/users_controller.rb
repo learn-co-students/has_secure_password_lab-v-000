@@ -8,15 +8,15 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.valid?
       @user.save
-      session[:id] = @user.id
-      redirect_to :show
+      session[:user_id] = @user.id
+      redirect_to '/homepage'
     else
-      render :new
+      redirect_to '/users/new'
     end
   end
 
   def show
-
+    @user = User.find_by(id: session[:user_id])
   end
 
   private
