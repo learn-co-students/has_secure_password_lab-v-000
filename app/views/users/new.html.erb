@@ -1,10 +1,9 @@
 <h1>Sign Up</h1>
 <p>Find me in app/views/users/new.html.erb</p>
-<%= form_tag ({controller: 'users', action: 'create', method: 'post'}) do %>
-  <label>Name</label>
-  <input name=name></br>
-
-  <label>Password</label>
-  <input name=password></br>
-  <input type=submit value='Sign Up'>
-<% end %>
+<!-- <%= form_for(@user) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+  <%= f.submit %>
+<% end %> -->
