@@ -6,12 +6,17 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(name: params[:name], password: params[:password])
-    if @user && @user.authenticate(params[:password])
+    if @user.name == params[:user][:name]
       session[:user_id] = @user.id
-      redirect_to '/'
+      redirect_to '/homepage'
     else
-      render '/login'
+      redirect_to '/login'
+    end
   end
 
+  def destroy
+    session.clear
+    redirect_to "/login"
+  end
 
 end

@@ -5,14 +5,16 @@ class UsersController < ApplicationController
   end
 
   def create
-    #raise params.inspect
-    @user = User.create(user_params)
-    session[:user_id] = @user.id
-    redirect_to "/" #=> GET "/"
+    @user = User.new(user_params)
+    if @user.save
+      session[:id] = @user.id
+      redirect_to :show
+    else
+      render :new
+    end
   end
 
   def show
-    #@user = User.find_by(session[:user_id])
 
   end
 
