@@ -1,3 +1,4 @@
-<h1>You're logged in!</h1>
+<h1>Hi, <%= @user.name %>.</h1>
 
+<p>You are logged in as: <%= current_user.name %></p>
 <%= link_to "Log out", logout_path %>
