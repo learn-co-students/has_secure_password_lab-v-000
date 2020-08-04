@@ -1,9 +1,10 @@
 <h1>Sign Up</h1>
 <p>Find me in app/views/users/new.html.erb</p>
-<!-- <%= form_for(@user) do |f| %>
-  <%= f.label :name %>
+<%= form_for(@user) do |f| %>
+  <%= f.label "Name" %>
   <%= f.text_field :name %>
-  <%= f.label :password %>
+
+  <%= f.label "Password" %>
   <%= f.text_field :password %>
-  <%= f.submit %>
-<% end %> -->
+  <%= f.submit "Sign Up" %>
+<% end %>
