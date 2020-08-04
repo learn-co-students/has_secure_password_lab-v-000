@@ -7,7 +7,13 @@ class UsersController < ApplicationController
   def create
     #raise params.inspect
     @user = User.create(user_params)
-    redirect_to root_path #=> GET "/"
+    session[:user_id] = @user.id
+    redirect_to "/" #=> GET "/"
+  end
+
+  def show
+    #@user = User.find_by(session[:user_id])
+
   end
 
   private
