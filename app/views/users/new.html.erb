@@ -1,0 +1,14 @@
+<p>Users#new</p>
+<p>Find me in app/views/users/new.html.erb</p>
+
+   <h1> Signup!</h1>
+
+    <%= form_for(@user) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+    <%= f.label :password_confirmation %>
+    <%= f.text_field :password_confirmation, :placeholder => "Confirm your password"%>
+    <input type=submit value='submit'>
+    <% end  %>
