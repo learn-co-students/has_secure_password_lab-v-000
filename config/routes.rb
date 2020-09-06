@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   # get 'users/create'
   get '/' => 'users#homepage'
   resources :users, :only => [:new, :create]
-  get '/new' => 'users#new'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
