@@ -1,0 +1,17 @@
+<h1>Create Account</h1>
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br><br>
+
+  <%= f.label :email %>
+  <%= email_field("user", "email") %><br><br>
+
+  <%= f.label :password %>
+  <%= password_field(:user, :password) %><br><br>
+
+  <%= f.label :password_confirmation %>
+  <%= password_field(:user, :password_confirmation) %><br><br>
+
+  <%= f.submit %>
+<% end %>
