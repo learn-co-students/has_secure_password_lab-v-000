@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
 
   let(:steven) {{name: 'Steven',
+            email: 'whatever@1234.com',
             password: 'un1verse',
             password_confirmation: 'un1verse'}}
 
