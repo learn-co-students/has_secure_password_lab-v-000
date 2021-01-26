@@ -1,0 +1,13 @@
+<h1>Sign in fewl!</h1>
+
+<% if flash.alert %>
+  <blockquote class="imgur-embed-pub" lang="en" data-id="a/ikbDL8k" data-context="false" ><a href="//imgur.com/a/ikbDL8k">Bugs Bunny No</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<% end %>
+
+<%= form_for(@user, url: login_path) do |f| %>
+  <%= f.text_field(:email) %>
+  <%= f.text_field(:password) %>
+  <%= f.submit("Sign in already") %>
+<% end %>
+
+<%= link_to("Or make an account fewl!", new_user_path) %>
