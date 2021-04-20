@@ -1,0 +1,9 @@
+<!-- <h1>Users#new</h1>
+<p>Find me in app/views/users/new.html.erb</p> -->
+
+<%= form_tag ({controller: 'users', action: 'create', method: 'post'}) do %>
+  <input name=name>
+  <input name=password>
+  <input name=password_confirmation>
+  <input type=submit value='register'>
+<% end %>
